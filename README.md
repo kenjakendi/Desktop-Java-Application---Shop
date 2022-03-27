@@ -2,6 +2,13 @@
 
 System do zarządzania sklepem
 
+Zespół:
+Laskowski Michał Damian
+Naumenko Kateryna
+Niemirski Wiktor Jan
+Wasilewska Julita
+
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
