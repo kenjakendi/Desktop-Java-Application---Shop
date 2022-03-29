@@ -22,7 +22,7 @@ Projekt jest system usprawniającym zarządzanie sklepem oraz realizacje zamówi
     - widzi stan produktów w magazynie,
     - może zlecić wystawienie produktów, 
     - zamówić dostawę i mieć dostęp do monitora finansowego/statystyk, 
-    - edytowanie oferty
+    - edytowanie oferty 
 
 ## Typ aplikacji
 - desktopowa
