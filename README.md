@@ -3,8 +3,10 @@
 <h1>System do zarządzania sklepem</h1>
 <b>
 Zespół:
-- Laskowski Michał Damian,
-- Naumenko Kateryna,
-- Niemirski Wiktor Jan,
-- Wasilewska Julita
+<ul>
+<li> Laskowski Michał Damian, </li>
+<li> Naumenko Kateryna, </li>
+<li> Niemirski Wiktor Jan, </li>
+<li> Wasilewska Julita </li>
+</ul>
 </b>
