@@ -1,6 +1,6 @@
 # PAP22L-Z16
 
-System do zarządzania sklepem
+<b>System do zarządzania sklepem</b>
 
 Zespół:
 Laskowski Michał Damian,
