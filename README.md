@@ -1,9 +1,10 @@
 # PAP22L-Z16
 
-<b>System do zarządzania sklepem</b>
-
+<h1>System do zarządzania sklepem</h1>
+<b>
 Zespół:
-Laskowski Michał Damian,
-Naumenko Kateryna,
-Niemirski Wiktor Jan,
-Wasilewska Julita
+- Laskowski Michał Damian,
+- Naumenko Kateryna,
+- Niemirski Wiktor Jan,
+- Wasilewska Julita
+</b>
