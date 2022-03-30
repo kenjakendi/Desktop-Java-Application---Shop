@@ -9,7 +9,7 @@
   ###### Prowadzący: Mateusz Modrzejewski
 
 ## Podstawowe informacje o projekcie:
-Projekt jest system usprawniającym zarządzanie sklepem oraz realizacje zamówień.
+Projekt jest systemem usprawniającym zarządzanie sklepem oraz realizacje zamówień. Będzie on miał charakter samoobsługowego sklepu stacjonarnego. System będzie składał się z interfejsu dla klienta, który służy jednocześnie za kasę samoobsługową oraz interfejsu managera zarządzającego sklepem.
 
 ## Funkcje aplikacji
  - oddzielne intefejsy dla managera sklepu oraz dla klienta 
@@ -24,6 +24,15 @@ Projekt jest system usprawniającym zarządzanie sklepem oraz realizacje zamówi
     - zamówić dostawę i mieć dostęp do monitora finansowego/statystyk, 
     - edytowanie oferty 
 
+## Wstępny zarys planowanych klas
+
+- **produkt:** będzie zawierała info o produktach: ilość, nazwa, id, cena
+- **klient:** klasa odpowiedzialna za obsługę intrfejsu klienta, metody przeglądu produktów i dodawania produktów do pól koszyk,
+- **koszyk:** przeglądanie produktów, finalizacja, dodwanie/usuwanie,
+- **manager:** klasa odpowiedzialana za obsługę intefejsu managera, sprawdzanie stanu sklepu, statystyk, dodowania produktów, zlecanie zamówień,
+- **sklep:** klasa inizjalizująca interfejsy i magazyn,
+- **magazyn:** klasa obsługująca bazę danych,
+
 ## Typ aplikacji
 - desktopowa
 
@@ -31,3 +40,13 @@ Projekt jest system usprawniającym zarządzanie sklepem oraz realizacje zamówi
 - IntelliJ IDEA
 - Git
 - VS Code
+
+## Planowane technologie
+- javafx
+- sqlite
+- maven
+
+## Planowane biblioteki
+- Lombok
+- Jackson
+###### Zakres pozostałych bibliotek będzie uzgodniony z prowadzącym podczas przebiegu projektu
