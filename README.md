@@ -14,25 +14,26 @@ Projekt jest systemem usprawniającym zarządzanie sklepem oraz realizacje zamó
 ## Funkcje aplikacji
  - oddzielne intefejsy dla managera sklepu oraz dla klienta 
  - klient:
-    - może sprawdzić dostępność produktów i ich cenę, 
-    - dokonać zakupów, 
+    - może sprawdzić dostępność produktów i ich cenę
+    - dokonać zakupów
     - każdy klient ma swój koszyk który może sfinalizować
  - manager: 
-    - ma również dostęp do stanu towarów widocznych dla klienta,
-    - widzi stan produktów w magazynie,
-    - może zlecić wystawienie produktów, 
-    - zamówić dostawę i mieć dostęp do monitora finansowego/statystyk, 
-    - edytowanie oferty 
+    - ma dostęp do stanu towarów widocznych dla klienta
+    - widzi stan produktów w magazynie
+    - zleca wystawienie produktów
+    - składa zamówienia na dostawę brakujących produktów
+    - ma dostęp do monitora finansowego oraz statystyk
+    - może edytować oferty
 
 ## Wstępny zarys planowanych klas
 
 |Klasa|Informacje|
 |-----|-----|
-|**produkt**| będzie zawierała info o produktach: ilość, nazwa, id, cena|
-|**klient**| klasa odpowiedzialna za obsługę intrfejsu klienta, metody przeglądu produktów i dodawania produktów do pól koszyk|
-|**koszyk**| przeglądanie produktów, finalizacja, dodwanie/usuwanie|
-|**manager**| klasa odpowiedzialana za obsługę intefejsu managera, sprawdzanie stanu sklepu, statystyk, dodowania produktów, zlecanie zamówień|
-|**sklep**| klasa inizjalizująca interfejsy i magazyn|
+|**produkt**| będzie zawierała informacje o produktach: ilość, nazwa, id, cena|
+|**klient**| klasa odpowiedzialna za obsługę interfejsu klienta, metody przeglądu produktów i dodawania produktów do pól koszyka|
+|**koszyk**| przeglądanie, dodawanie i usuwanie produktów, finalizacja zamówień|
+|**manager**| klasa odpowiedzialna za obsługę interfejsu managera, sprawdzanie stanu sklepu, statystyk, dodawania produktów, zlecanie zamówień|
+|**sklep**| klasa inicjalizująca interfejsy i magazyn|
 |**magazyn**| klasa obsługująca bazę danych|
 
 ###### Zakres klas może ulec zmianie wraz z rozwojem projektu
