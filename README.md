@@ -26,12 +26,16 @@ Projekt jest systemem usprawniającym zarządzanie sklepem oraz realizacje zamó
 
 ## Wstępny zarys planowanych klas
 
-- **produkt:** będzie zawierała info o produktach: ilość, nazwa, id, cena
-- **klient:** klasa odpowiedzialna za obsługę intrfejsu klienta, metody przeglądu produktów i dodawania produktów do pól koszyk,
-- **koszyk:** przeglądanie produktów, finalizacja, dodwanie/usuwanie,
-- **manager:** klasa odpowiedzialana za obsługę intefejsu managera, sprawdzanie stanu sklepu, statystyk, dodowania produktów, zlecanie zamówień,
-- **sklep:** klasa inizjalizująca interfejsy i magazyn,
-- **magazyn:** klasa obsługująca bazę danych,
+|Klasa|Informacje|
+|-----|-----|
+|**produkt**| będzie zawierała info o produktach: ilość, nazwa, id, cena|
+|**klient**| klasa odpowiedzialna za obsługę intrfejsu klienta, metody przeglądu produktów i dodawania produktów do pól koszyk|
+|**koszyk**| przeglądanie produktów, finalizacja, dodwanie/usuwanie|
+|**manager**| klasa odpowiedzialana za obsługę intefejsu managera, sprawdzanie stanu sklepu, statystyk, dodowania produktów, zlecanie zamówień|
+|**sklep**| klasa inizjalizująca interfejsy i magazyn|
+|**magazyn**| klasa obsługująca bazę danych|
+
+###### Zakres klas może ulec zmianie wraz z rozwojem projektu
 
 ## Typ aplikacji
 - desktopowa
