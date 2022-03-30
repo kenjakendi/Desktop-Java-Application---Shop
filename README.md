@@ -38,19 +38,21 @@ Projekt jest systemem usprawniającym zarządzanie sklepem oraz realizacje zamó
 ###### Zakres klas może ulec zmianie wraz z rozwojem projektu
 
 ## Typ aplikacji
-- desktopowa
+- desktopowa ze wzorcem MVC
 
 ## Narzędzia
-- IntelliJ IDEA
-- Git
-- VS Code
 
-## Planowane technologie
+Środowiska:
+- IntelliJ IDEA
+- VS Code
+- Gitlab
+
+Planowane technologie:
 - javafx
 - sqlite
 - maven
 
-## Planowane biblioteki
+Planowane biblioteki:
 - Lombok
 - Jackson
 ###### Zakres pozostałych bibliotek będzie uzgodniony z prowadzącym podczas przebiegu projektu
