@@ -1,5 +1,7 @@
+import lombok.Data;
 import java.util.Map;
 
+@Data
 public class Basket {
     Map<Item, Integer> basket;
     Warehouse warehouse;
