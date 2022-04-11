@@ -6,4 +6,8 @@ public class Item {
     String name;
     int price;
     String description;
+
+    public Item(String name){
+        this.name = name;
+    }
 }
