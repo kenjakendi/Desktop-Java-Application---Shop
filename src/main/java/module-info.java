@@ -1,4 +1,4 @@
-module pap22 {
+module pap {
     requires javafx.controls;
     requires javafx.fxml;
     requires lombok;
