@@ -1,3 +1,5 @@
+package pap;
+
 import org.junit.Test;
 import org.junit.Assert;
 

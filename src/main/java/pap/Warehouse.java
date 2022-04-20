@@ -1,3 +1,5 @@
+package pap;
+
 import lombok.Data;
 import java.util.Map;
 
