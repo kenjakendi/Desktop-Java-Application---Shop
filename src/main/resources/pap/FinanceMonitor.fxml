@@ -24,24 +24,19 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Label layoutX="226.0" layoutY="107.0" text="Witamy, &quot;Login&quot;!" textFill="#6f4516">
+      <ImageView fitHeight="272.0" fitWidth="499.0" layoutX="69.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@graphics/2xOW-N66m39j02h6RstsO1MYfrvBNIWHIQH17wZA7zY.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="90.0" layoutY="66.0" text="Statystyka ceny produktu &quot;Ziemniaki opak. 2 kg&quot;" textFill="#2586e5">
          <font>
-            <Font name="System Italic" size="20.0" />
+            <Font name="Arial Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Button layoutX="221.0" layoutY="168.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="157.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Edytuj koszyk" textFill="#f5eed0">
+      <Button layoutX="207.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToManagerPage" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516;" text="Wróć" textFill="#6f4516">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="17.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToFinanceMonitor" prefHeight="47.0" prefWidth="175.0" style="-fx-border-color: #6f4516;" text="Monitoring finansowy" textFill="#6f4516">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="221.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToHandlingOfGoods" prefHeight="47.0" prefWidth="157.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Obsługa artykułów" textFill="#f5eed0">
-         <font>
-            <Font name="System Bold" size="15.0" />
+            <Font size="19.0" />
          </font>
       </Button>
    </children>

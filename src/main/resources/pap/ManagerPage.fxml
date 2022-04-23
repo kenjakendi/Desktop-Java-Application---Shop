@@ -29,5 +29,20 @@
             <Font name="System Italic" size="20.0" />
          </font>
       </Label>
+      <Button layoutX="221.0" layoutY="168.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="157.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Edytuj koszyk" textFill="#f5eed0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="17.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToFinanceMonitor" prefHeight="47.0" prefWidth="175.0" style="-fx-border-color: #6f4516;" text="Monitoring finansowy" textFill="#6f4516">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="221.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToHandlingOfGoods" prefHeight="47.0" prefWidth="157.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Obsługa artykułów" textFill="#f5eed0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -65,6 +65,24 @@ public class SceneController {
 
     }
 
+    public void switchToHandlingOfGoods(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("HandlingOfGoods.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    public void switchToFinanceMonitor(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("FinanceMonitor.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
     public Map tryLogging(MouseEvent event) throws IOException {
         String log = login.getText();
         String pass = password.getText();
