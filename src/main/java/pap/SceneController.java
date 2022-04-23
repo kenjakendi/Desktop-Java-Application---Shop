@@ -19,7 +19,7 @@ public class SceneController {
     private Scene scene;
     private Parent root;
     @FXML
-    private TextField login;
+    public TextField login;
     @FXML
     private TextField password;
     @FXML
@@ -83,17 +83,28 @@ public class SceneController {
 
     }
 
-    public Map tryLogging(MouseEvent event) throws IOException {
+    public Map tryLogging(ActionEvent event) throws IOException {
         String log = login.getText();
         String pass = password.getText();
-        Map<String, String> userData = new HashMap<String, String>();
-        userData.put(log, pass);
-        System.out.println(userData.keySet() + " " + userData.values());
-        return userData;
+        Manager our_manager = new Manager(log, pass);
+        System.out.println(our_manager.userData.keySet() + " " + our_manager.userData.values());
+
+        //w tym miejscu możemy sprawdzać, czy obiekt managera istnieje w naszej bazie dannych z pracownikami. jeśli tak, to przechodzimy do strony ManagerPage
+
+        switchToManagerPage(event);
+        return our_manager.userData;
     }
     public String getArticleName(MouseEvent event) throws IOException {
         String name = productName.getText().toLowerCase();
-        System.out.println(name);
+        Item product = new Item(name);
+
+        //w tym miejscu możemy sprawdzać, czy item istnieje w naszej bazie dannych z produktami. jeśli tak, to dodajemy do koszyka
+
+        System.out.println(product.name);
         return name;
+    }
+
+    public void Tescik(MouseEvent event) throws IOException {
+        System.out.println("It works");
     }
 }

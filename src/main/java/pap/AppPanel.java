@@ -19,6 +19,7 @@ public class AppPanel extends Application {
         stage.setTitle("Shop");
         stage.setScene(new Scene(root));
         stage.show();
+        Basket our_basket = new Basket();
     }
 
     public static void main(String[] args) {

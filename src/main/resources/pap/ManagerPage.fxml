@@ -24,7 +24,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Label layoutX="226.0" layoutY="107.0" text="Witamy, &quot;Login&quot;!" textFill="#6f4516">
+      <Label layoutX="208.0" layoutY="107.0" text="Witamy" textFill="#6f4516">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
@@ -44,5 +44,10 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label layoutX="290.0" layoutY="107.0" prefHeight="30.0" prefWidth="234.0" text= "#tu będzie imie managera" textFill="#6f4516">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
