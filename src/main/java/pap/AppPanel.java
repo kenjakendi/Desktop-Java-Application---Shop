@@ -10,14 +10,19 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AppPanel extends Application {
-
-    private static Scene scene;
+    Stage stage;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage primaryStage) throws IOException {
+        stage = primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("MainShop.fxml"));
+        stage.setTitle("Shop");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     public static void main(String[] args) {
+        launch();
     }
 
 }

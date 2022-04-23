@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.SceneController">
+   <children>
+      <Label layoutX="81.0" layoutY="36.0" text="Pszczółka">
+         <font>
+            <Font name="Arial Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="67.0" fitWidth="97.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@graphics/beeeeeee.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="129.0" layoutY="196.0" text="Dziękujemy za zakupy!">
+         <font>
+            <Font name="System Italic" size="35.0" />
+         </font>
+      </Label>
+      <Button layoutX="250.0" layoutY="247.0" mnemonicParsing="false" onAction="#switchToMainShop" text="Wróć do sklepu" />
+   </children>
+</AnchorPane>
