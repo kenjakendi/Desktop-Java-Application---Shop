@@ -17,10 +17,10 @@
       </Label>
       <ImageView fitHeight="67.0" fitWidth="97.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@graphics/beeeeeee.png" />
+            <Image url="@graphics/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="72.0" layoutY="343.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="Wyszukaj artykuł po nazwie">
+      <Button layoutX="72.0" layoutY="343.0" mnemonicParsing="false" onAction="#switchToArticles" prefHeight="35.0" prefWidth="200.0" text="Wyszukaj artykuł po nazwie">
          <font>
             <Font size="14.0" />
          </font>

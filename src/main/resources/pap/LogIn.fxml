@@ -17,7 +17,7 @@
       </Label>
       <ImageView fitHeight="67.0" fitWidth="97.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@graphics/beeeeeee.png" />
+            <Image url="@graphics/logo.png" />
          </image>
       </ImageView>
       <Label layoutX="251.0" layoutY="131.0" text="Zaloguj się">
@@ -25,8 +25,8 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TextField layoutX="223.0" layoutY="187.0" prefHeight="25.0" prefWidth="180.0" />
-      <TextField layoutX="223.0" layoutY="258.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="login" layoutX="223.0" layoutY="187.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="password" layoutX="223.0" layoutY="258.0" prefHeight="25.0" prefWidth="180.0" />
       <Label layoutX="81.0" layoutY="184.0" text="Login:">
          <font>
             <Font size="22.0" />
@@ -37,7 +37,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="359.0" layoutY="307.0" mnemonicParsing="false" text="Enter" />
+      <Button layoutX="359.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#tryLogging" text="Enter" />
       <Button layoutX="22.0" layoutY="396.0" mnemonicParsing="false" text="Pomoc" />
       <Button layoutX="518.0" layoutY="396.0" mnemonicParsing="false" onAction="#switchToMainShop" text="Anuluj" />
    </children>
