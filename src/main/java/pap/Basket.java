@@ -1,11 +1,13 @@
 package pap;
 
 import lombok.Data;
+
+import java.util.HashMap;
 import java.util.Map;
 
 @Data
 public class Basket {
-    Map<Item, Integer> basket;
+    Map<Item, Integer> basket = new HashMap<>();
     Warehouse warehouse;
 
     public void resetBasket(){
@@ -26,6 +28,9 @@ public class Basket {
     }
 
     public void addMoreItems(Item item, Integer quantity){
+        if (quantity > warehouse.getQuantity(item)){
+            quantity=warehouse.getQuantity(item);
+        }
         for (int i=0; i < quantity; i++){
             addItem(item);
         }
