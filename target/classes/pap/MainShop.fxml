@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.MainShopController">
    <children>
       <Label layoutX="81.0" layoutY="36.0" text="Pszczółka" textFill="#6f4516">
          <font>
@@ -25,12 +25,14 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <ListView layoutX="72.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="basketView" layoutX="72.0" layoutY="122.0" opacity="0.77" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="499.0" layoutY="23.0" mnemonicParsing="false" onAction="#switchToLogIn" style="-fx-border-color: #6f4516;" text="Zaloguj się" textFill="#6f4516" />
       <Button layoutX="452.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToPay" prefHeight="42.0" prefWidth="121.0" style="-fx-border-color: #6f4516;" text="Zapłać" textFill="#6f4516">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
+      <Label fx:id="test" layoutX="272.0" layoutY="77.0" prefHeight="35.0" prefWidth="151.0" text="wybrany artykuł" />
+      <Button layoutX="327.0" layoutY="130.0" mnemonicParsing="false" onAction="#remove" text="Usuń z koszyka" />
    </children>
 </AnchorPane>

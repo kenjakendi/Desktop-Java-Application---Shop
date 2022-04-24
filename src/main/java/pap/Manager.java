@@ -9,7 +9,7 @@ package pap;
 public class Manager {
     public String login;
     public String password;
-    Map<String, String> userData;
+    public Map<String, String> userData;
 
     public Manager(String login, String password){
         this.login = login;

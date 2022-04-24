@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.ArticlesController">
    <children>
       <Label layoutX="81.0" layoutY="36.0" text="Pszczółka" textFill="#6f4516">
          <font>
@@ -26,7 +26,7 @@
          </font>
       </Button>
       <TextField fx:id="productName" layoutX="61.0" layoutY="96.0" prefHeight="29.0" prefWidth="478.0" promptText="wpisz nazwę produktu..." />
-      <Button layoutX="447.0" layoutY="241.0" mnemonicParsing="false" onAction="#switchToMainShop" onMouseClicked="#getArticleName" prefHeight="29.0" prefWidth="91.0" style="-fx-border-color: #6f4516;" text="Dodaj" textFill="#6f4516">
+      <Button fx:id="enterNameButton" layoutX="447.0" layoutY="241.0" mnemonicParsing="false" onAction="#getProductName" prefHeight="29.0" prefWidth="91.0" style="-fx-border-color: #6f4516;" text="Dodaj" textFill="#6f4516">
          <font>
             <Font size="19.0" />
          </font>
