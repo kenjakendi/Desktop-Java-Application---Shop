@@ -49,7 +49,17 @@ public class LogInController {
 
         //w tym miejscu możemy sprawdzać, czy obiekt managera istnieje w naszej bazie dannych z pracownikami. jeśli tak, to przechodzimy do strony ManagerPage
 
-        switchToManagerPage(event);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
+        root = loader.load();
+        ManagerPageController managerPage = loader.getController();
+        managerPage.changeName(log);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+        //switchToManagerPage(event);
         return our_manager.userData;
     }
 
