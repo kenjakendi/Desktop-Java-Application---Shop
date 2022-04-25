@@ -22,9 +22,13 @@ public class LogInController {
     public TextField login;
     @FXML
     private TextField password;
+    static public boolean logged;
 
     public void switchToMainShop(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("MainShop.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
+        root = loader.load();
+        MainShopController mainShop = loader.getController();
+        mainShop.refreshList();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -41,6 +45,10 @@ public class LogInController {
 
     }
 
+    public boolean getLogged(){
+        return logged;
+    }
+
     public Map tryLogging(ActionEvent event) throws IOException {
         String log = login.getText();
         String pass = password.getText();
@@ -53,6 +61,7 @@ public class LogInController {
         root = loader.load();
         ManagerPageController managerPage = loader.getController();
         managerPage.changeName(log);
+        logged = true;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

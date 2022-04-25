@@ -6,11 +6,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,17 +52,39 @@ public class MainShopController implements Initializable {
         refreshList();
     }
 
-    public void remove(ActionEvent event){
-        try {
-            String[] basket = bask.keySet().toArray(new String[0]);
-            int index = basketView.getSelectionModel().getSelectedIndex();
-            System.out.println(index);
-            basketView.getItems().remove(index);
-            bask.remove(basket[index]);
+    public void remove(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogIn.fxml"));
+        root = loader.load();
+        LogInController logger = loader.getController();
+        if (logger.getLogged()) {
+            try {
+                String[] basket = bask.keySet().toArray(new String[0]);
+                int index = basketView.getSelectionModel().getSelectedIndex();
+                System.out.println(index);
+                basketView.getItems().remove(index);
+                bask.remove(basket[index]);
+            } catch (Exception e) {
+                System.out.println("no product chosen");
+            }
         }
-        catch (Exception e){
-            System.out.println("empty basket");
+        else{
+            waitForManager();
         }
+    }
+
+    public void waitForManager(){
+        Stage popUpWindow = new Stage();
+        popUpWindow.initModality(Modality.APPLICATION_MODAL);
+        popUpWindow.setTitle("Alert Alarm Emergency");
+        Label label= new Label("Wait for manager to come");
+        Button button1= new Button("Close this pop up window");
+        button1.setOnAction(e -> popUpWindow.close());
+        VBox layout= new VBox(10);
+        layout.getChildren().addAll(label, button1);
+        layout.setAlignment(Pos.CENTER);
+        Scene scene1 = new Scene(layout, 200, 200);
+        popUpWindow.setScene(scene1);
+        popUpWindow.showAndWait();
     }
 
     public void switchToPay(ActionEvent event) throws IOException {
