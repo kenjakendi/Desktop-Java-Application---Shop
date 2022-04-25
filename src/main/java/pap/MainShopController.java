@@ -29,26 +29,36 @@ public class MainShopController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] basket = bask.keySet().toArray(new String[0]);
-        basketView.getItems().addAll(basket);
         basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 String CurrListItem = basketView.getSelectionModel().getSelectedItem();
                 test.setText(CurrListItem);
-            }   // wyświetla produkty w koszyku żeby nie nadpisywały się ale kod działa z opóźnieneim i jest mocno do poprawy
+            }   // odczytuje nazwę wybranego produktu z koszyka
         });
+    }
+
+    public void refreshList(){  // żeby dodawać do koszyka trzeba go zmieniać na array[]
+        String[] basket = bask.keySet().toArray(new String[0]);
+        basketView.getItems().addAll(basket);
     }
 
     public void addItem(String name){   // ma być w baskecie ale nie mamy Itemów do dodawania i ciężko testować
         bask.put(name,1);
+        refreshList();
     }
 
     public void remove(ActionEvent event){
-        int index = basketView.getSelectionModel().getSelectedIndex();
-        basketView.getItems().remove(index);
-        String[] basket = bask.keySet().toArray(new String[0]);
-        bask.remove(basket[index]);
+        try {
+            String[] basket = bask.keySet().toArray(new String[0]);
+            int index = basketView.getSelectionModel().getSelectedIndex();
+            System.out.println(index);
+            basketView.getItems().remove(index);
+            bask.remove(basket[index]);
+        }
+        catch (Exception e){
+            System.out.println("empty basket");
+        }
     }
 
     public void switchToPay(ActionEvent event) throws IOException {
