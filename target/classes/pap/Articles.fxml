@@ -20,13 +20,13 @@
             <Image url="@graphics/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="398.0" layoutY="379.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="29.0" prefWidth="175.0" style="-fx-border-color: #6f4516;" text="Wróć do sklepu" textFill="#6f4516">
+      <Button layoutX="398.0" layoutY="379.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="29.0" prefWidth="175.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;" text="Wróć do sklepu" textFill="#6f4516">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
       <TextField fx:id="productName" layoutX="61.0" layoutY="96.0" prefHeight="29.0" prefWidth="478.0" promptText="wpisz nazwę produktu..." />
-      <Button fx:id="enterNameButton" layoutX="447.0" layoutY="241.0" mnemonicParsing="false" onAction="#getProductName" prefHeight="29.0" prefWidth="91.0" style="-fx-border-color: #6f4516;" text="Dodaj" textFill="#6f4516">
+      <Button fx:id="enterNameButton" layoutX="447.0" layoutY="241.0" mnemonicParsing="false" onAction="#getProductName" prefHeight="29.0" prefWidth="91.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Dodaj" textFill="#6f4516">
          <font>
             <Font size="19.0" />
          </font>

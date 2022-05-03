@@ -24,7 +24,7 @@
             <Font name="System Italic" size="35.0" />
          </font>
       </Label>
-      <Button layoutX="390.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="51.0" prefWidth="176.0" style="-fx-border-color: #6f4516;" text="Wróć do sklepu" textFill="#6f4516">
+      <Button layoutX="390.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="51.0" prefWidth="176.0" style="-fx-border-color: #6f4516; -fx-background-color: #fff4c6; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wróć do sklepu" textFill="#6f4516">
          <font>
             <Font size="17.0" />
          </font></Button>
