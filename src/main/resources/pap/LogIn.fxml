@@ -37,9 +37,18 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="352.0" layoutY="312.0" mnemonicParsing="false" onAction="#tryLogging" style="-fx-border-color: #6f4516;" text="Enter" textFill="#6f4516" />
-      <Button layoutX="22.0" layoutY="396.0" mnemonicParsing="false" style="-fx-border-color: #6f4516;" text="Pomoc" textFill="#6f4516" />
-      <Button layoutX="518.0" layoutY="396.0" mnemonicParsing="false" onAction="#switchToMainShop" style="-fx-border-color: #6f4516;" text="Anuluj" textFill="#6f4516" />
+      <Button layoutX="352.0" layoutY="312.0" mnemonicParsing="false" onAction="#tryLogging" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Enter" textFill="#6f4516">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button layoutX="22.0" layoutY="396.0" mnemonicParsing="false" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-background-radius: 10; -fx-border-radius: 10;" text="Pomoc" textFill="#6f4516">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button layoutX="518.0" layoutY="396.0" mnemonicParsing="false" onAction="#switchToMainShop" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;" text="Anuluj" textFill="#6f4516">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
       <PasswordField fx:id="password" layoutX="223.0" layoutY="258.0" prefHeight="26.0" prefWidth="180.0" promptText="password" />
       <Label fx:id="loginStatus" alignment="CENTER" layoutX="210.0" layoutY="312.0" prefHeight="18.0" prefWidth="114.0" textAlignment="RIGHT" textFill="RED">
          <font>

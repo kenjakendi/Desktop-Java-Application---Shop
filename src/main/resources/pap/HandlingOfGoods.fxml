@@ -19,9 +19,9 @@
             <Image url="@graphics/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="400.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516;" text="Wróć do sklepu" textFill="#6f4516">
+      <Button layoutX="400.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #fff4c6; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wróć do sklepu" textFill="#6f4516">
          <font>
-            <Font size="19.0" />
+            <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
       <Label layoutX="218.0" layoutY="77.0" text="Obsługa artykułów" textFill="#6f4516">
@@ -29,29 +29,29 @@
             <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="188.0" layoutY="134.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="224.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Zobacz stan produktów" textAlignment="CENTER" textFill="#f5eed0">
+      <Button layoutX="188.0" layoutY="134.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="224.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426; -fx-border-radius: 10; -fx-background-radius: 10;" text="Zobacz stan produktów" textAlignment="CENTER" textFill="#f5eed0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="17.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToFinanceMonitor" prefHeight="47.0" prefWidth="170.0" style="-fx-border-color: #6f4516;" text="Monitoring finansowy" textFill="#6f4516">
+      <Button layoutX="17.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToFinanceMonitor" prefHeight="47.0" prefWidth="170.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #fff4c6; -fx-background-radius: 10; -fx-border-radius: 10;" text="Monitoring finansowy" textFill="#6f4516">
          <font>
-            <Font size="15.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="188.0" layoutY="286.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="224.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Edytuj oferty" textFill="#f5eed0">
+      <Button layoutX="188.0" layoutY="286.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="224.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426; -fx-background-radius: 10; -fx-border-radius: 10;" text="Edytuj oferty" textFill="#f5eed0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="188.0" layoutY="210.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="224.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426;" text="Zamów dostawę produktów" textFill="#f5eed0">
+      <Button layoutX="188.0" layoutY="210.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="224.0" style="-fx-border-color: #6f4516; -fx-background-color: #a98426; -fx-background-radius: 10; -fx-border-radius: 10;" text="Zamów dostawę produktów" textFill="#f5eed0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="207.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToManagerPage" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516;" text="Wróć" textFill="#6f4516">
+      <Button layoutX="207.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToManagerPage" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #fff4c6; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wróć" textFill="#6f4516">
          <font>
-            <Font size="19.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Button>
    </children>
