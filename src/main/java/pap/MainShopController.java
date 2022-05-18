@@ -38,7 +38,7 @@ public class MainShopController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 String CurrListItem = basketView.getSelectionModel().getSelectedItem();
                 test.setText(CurrListItem);
-            }   // odczytuje nazwę wybranego produktu z koszyka
+            }
         });
     }
 
