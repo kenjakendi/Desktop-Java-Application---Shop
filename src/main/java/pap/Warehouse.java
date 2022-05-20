@@ -80,6 +80,12 @@ public class Warehouse {
         return nameList;
     }
 
+    public void clearItems(){
+        if (!items.isEmpty()){
+            items.clear();
+        }
+    }
+
 
     public boolean containItem(Item item){
         return items.containsKey(item);

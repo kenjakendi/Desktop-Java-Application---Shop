@@ -30,14 +30,6 @@ public class ManagerPageController {
         managerName.appendText(name + " !");
     }
 
-    public void switchToHandlingOfGoods(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HandlingOfGoods.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void switchToFinanceMonitor(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("FinanceMonitor.fxml"));
@@ -45,7 +37,30 @@ public class ManagerPageController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
 
+    public void switchToEditOffer(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ChangeOffer.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToMagasinView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("MagasinView.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToPlaceOrder(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("PlaceOrder.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void switchToMainShop(ActionEvent event) throws IOException {
