@@ -33,7 +33,7 @@ public class MainShopController implements Initializable {
     private Parent root;
     static Basket basket = new Basket(); // to ma być koszyk
     ArrayList<String> itemsNameList = basket.getItemsNameList();
-    private String catchedItemName;
+    private String catchItemName;
     @FXML
     Button logOutButton;
 
@@ -42,8 +42,8 @@ public class MainShopController implements Initializable {
         basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                catchedItemName = basketView.getSelectionModel().getSelectedItem();
-                test.setText(catchedItemName);
+                catchItemName = basketView.getSelectionModel().getSelectedItem();
+                test.setText(catchItemName);
             }
         });
     }
@@ -64,7 +64,7 @@ public class MainShopController implements Initializable {
     public void remove(ActionEvent event) throws IOException{
         if (LogInController.getLogged()) {
             try {
-                Item item = basket.findItemByName(catchedItemName);
+                Item item = basket.findItemByName(catchItemName);
                 basket.removeItem(item);
                 refreshList();
             } catch (Exception e) {

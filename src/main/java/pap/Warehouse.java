@@ -1,13 +1,14 @@
 package pap;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-@Data
 public class Warehouse {
-    public static Map<Item, Integer> items;
+    @Getter @Setter
+    static Map<Item, Integer> items;
 
     public Warehouse(Map<Item, Integer> items){
         this.items = items;
@@ -81,9 +82,7 @@ public class Warehouse {
     }
 
     public void clearItems(){
-        if (!items.isEmpty()){
-            items.clear();
-        }
+        items.clear();
     }
 
 

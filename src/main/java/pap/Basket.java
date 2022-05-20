@@ -1,15 +1,19 @@
 package pap;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
-@Data
+
 public class Basket {
+    @Setter @Getter
     public static Map<Item, Integer> basket = new HashMap<>();
+    @Setter @Getter
     static Warehouse warehouse;
 
     public Basket(){}
@@ -19,9 +23,7 @@ public class Basket {
     }
 
     public static void resetBasket(){
-        if (!basket.isEmpty()){
-            basket.clear();
-        }
+        basket.clear();
     }
 
     public Item findItemByName(String name){
