@@ -16,6 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lombok.extern.java.Log;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,8 +35,7 @@ public class MainShopController implements Initializable {
     ArrayList<String> itemsNameList = basket.getItemsNameList();
     private String catchedItemName;
     @FXML
-    static Button logOutButt;
-
+    Button logOutButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +52,7 @@ public class MainShopController implements Initializable {
         itemsNameList = basket.getItemsNameList();
         basketView.getItems().clear();
         basketView.getItems().addAll(itemsNameList);
+        logOutButton.setVisible(LogInController.getLogged());
     }
 
     public void addItem(Item item){   // ma być w baskecie ale nie mamy Itemów do dodawania i ciężko testować
@@ -61,10 +62,7 @@ public class MainShopController implements Initializable {
     }
 
     public void remove(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogIn.fxml"));
-        root = loader.load();
-        LogInController logger = loader.getController();
-        if (logger.getLogged()) {
+        if (LogInController.getLogged()) {
             try {
                 Item item = basket.findItemByName(catchedItemName);
                 basket.removeItem(item);
@@ -117,12 +115,8 @@ public class MainShopController implements Initializable {
         stage.show();
     }
 
-    public static void showLogOut(){
-        logOutButt.setVisible(true);
-    }
-
     public void logOut(){
         LogInController.setLogged(false);
-        logOutButt.setVisible(false);
+        logOutButton.setVisible(false);
     }
 }

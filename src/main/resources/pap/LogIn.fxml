@@ -26,7 +26,7 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="login" layoutX="223.0" layoutY="187.0" onDragEntered="#Tescik" prefHeight="25.0" prefWidth="180.0" promptText="username" />
+      <TextField fx:id="login" layoutX="223.0" layoutY="187.0" prefHeight="25.0" prefWidth="180.0" promptText="username" />
       <Label layoutX="81.0" layoutY="184.0" text="Login:" textFill="#6f4516">
          <font>
             <Font size="22.0" />
