@@ -100,8 +100,15 @@ public class MainShopController implements Initializable {
     }
 
     public void switchToLogIn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        String resource;
+        if (LogInController.getLogged()) {
+            resource = "ManagerPage.fxml";
+        }
+        else {
+            resource = "LogIn.fxml";
+        }
+        Parent root = FXMLLoader.load(getClass().getResource(resource));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

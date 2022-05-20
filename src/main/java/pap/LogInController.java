@@ -27,7 +27,7 @@ public class LogInController {
     private TextField password;
     @FXML
     private Label loginStatus;
-    static public boolean logged;
+    static public boolean logged = false;
 
     public void switchToMainShop(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
