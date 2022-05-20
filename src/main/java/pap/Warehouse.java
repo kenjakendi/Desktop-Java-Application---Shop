@@ -1,6 +1,8 @@
 package pap;
 
 import lombok.Data;
+
+import java.util.ArrayList;
 import java.util.Map;
 
 @Data
@@ -58,6 +60,16 @@ public class Warehouse {
         }
         return -1;
     }
+
+    public ArrayList<String> getItemsNameList(){
+        ArrayList<String> nameList = new ArrayList<>();
+        for (Item item :items.keySet()){
+            String name = item.getName();
+            nameList.add(name);
+        }
+        return nameList;
+    }
+
 
     public boolean containItem(Item item){
         return items.containsKey(item);
