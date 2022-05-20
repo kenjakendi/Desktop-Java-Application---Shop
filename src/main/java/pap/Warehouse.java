@@ -7,6 +7,13 @@ import java.util.Map;
 public class Warehouse {
     Map<Item, Integer> items;
 
+    public Warehouse(Map<Item, Integer> items){
+        this.items = items;
+    }
+
+    public Warehouse(){
+    }
+
     public Item getItemById(int id){
         for (Item item :items.keySet()){
             int itemId = item.getId();

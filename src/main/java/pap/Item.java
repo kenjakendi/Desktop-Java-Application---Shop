@@ -12,4 +12,8 @@ public class Item {
     public Item(String name){
         this.name = name;
     }
+    public Item(String name, int price){
+        this.name = name;
+        this.price = price;
+    }
 }

@@ -2,6 +2,7 @@ package pap;
 
 import lombok.Data;
 
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +10,12 @@ import java.util.Map;
 public class Basket {
     Map<Item, Integer> basket = new HashMap<>();
     Warehouse warehouse;
+
+    public Basket(){}
+
+    public Basket(Warehouse warehouse){
+        this.warehouse = warehouse;
+    }
 
     public void resetBasket(){
         if (!basket.isEmpty()){
