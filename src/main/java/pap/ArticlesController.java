@@ -23,22 +23,20 @@ public class ArticlesController implements Initializable {
     private Parent root;
     @FXML
     private TextField productName;
-
-    ArrayList<String> lista = new ArrayList<>(
-            Arrays.asList("jabłko", "banany", "pomarańcza")
-            );
+    Warehouse warehouse = new Warehouse();
+    ArrayList<String> itemsNameList = warehouse.getItemsNameList();
     @FXML
     private ListView<String> productList;
 
     @FXML
     public void search(ActionEvent event){
         productList.getItems().clear();
-        productList.getItems().addAll(searchList(productName.getText(),lista));
+        productList.getItems().addAll(searchList(productName.getText(),itemsNameList));
     }
 
-    public String selectedItem(){
-        String item = productList.getSelectionModel().getSelectedItem();
-        return item;
+    public Item selectedItem(){
+        String itemName = productList.getSelectionModel().getSelectedItem();
+        return warehouse.findItemByName(itemName);
     }
 
     private List<String> searchList(String searchWords, List<String> listOfStrings){
@@ -63,12 +61,12 @@ public class ArticlesController implements Initializable {
     }
 
     public void getProductName(ActionEvent event) throws IOException {
-        String name = selectedItem();
+        Item item = selectedItem();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
         MainShopController mainShop = loader.getController();
-        if (name != null)
-            mainShop.addItem(name);
+        if (item.getName() != null)
+            mainShop.addItem(item);
         else
             mainShop.refreshList();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -79,6 +77,6 @@ public class ArticlesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        productList.getItems().addAll(lista);
+        productList.getItems().addAll(itemsNameList);
     }
 }

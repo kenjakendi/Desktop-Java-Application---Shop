@@ -15,6 +15,7 @@ public class PayController {
     private Parent root;
 
     public void switchToMainShop(ActionEvent event) throws IOException {
+        buy();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
         MainShopController mainShop = loader.getController();
@@ -23,5 +24,9 @@ public class PayController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void buy(){
+        Basket.buy();
     }
 }

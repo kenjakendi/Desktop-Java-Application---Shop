@@ -38,7 +38,10 @@ public class LogInController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
 
+    public static void setLogged(boolean status){
+        logged = status;
     }
 
    /*
@@ -58,7 +61,8 @@ public class LogInController {
         root = loader.load();
         ManagerPageController managerPage = loader.getController();
         managerPage.changeName(log);
-        logged = true;
+        setLogged(true);
+        //MainShopController.showLogOut();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

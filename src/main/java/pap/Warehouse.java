@@ -7,7 +7,7 @@ import java.util.Map;
 
 @Data
 public class Warehouse {
-    Map<Item, Integer> items;
+    public static Map<Item, Integer> items;
 
     public Warehouse(Map<Item, Integer> items){
         this.items = items;
@@ -20,6 +20,16 @@ public class Warehouse {
         for (Item item :items.keySet()){
             int itemId = item.getId();
             if (itemId == id) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public Item findItemByName(String name){
+        for (Item item :items.keySet()){
+            String itemName = item.getName();
+            if (itemName.equals(name)) {
                 return item;
             }
         }
@@ -61,7 +71,7 @@ public class Warehouse {
         return -1;
     }
 
-    public ArrayList<String> getItemsNameList(){
+    public static ArrayList<String> getItemsNameList(){
         ArrayList<String> nameList = new ArrayList<>();
         for (Item item :items.keySet()){
             String name = item.getName();

@@ -26,30 +26,38 @@ public class MainShopController implements Initializable {
     private ListView<String> basketView;
     @FXML
     Label test;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
-    static Map<String, Integer> bask = new HashMap<>(); // to ma być koszyk
+    static Basket basket = new Basket(); // to ma być koszyk
+    ArrayList<String> itemsNameList = basket.getItemsNameList();
+    private String catchedItemName;
+    @FXML
+    static Button logOutButt;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                String CurrListItem = basketView.getSelectionModel().getSelectedItem();
-                test.setText(CurrListItem);
+                catchedItemName = basketView.getSelectionModel().getSelectedItem();
+                test.setText(catchedItemName);
             }
         });
     }
 
     public void refreshList(){  // żeby dodawać do koszyka trzeba go zmieniać na array[]
-        String[] basket = bask.keySet().toArray(new String[0]);
-        basketView.getItems().addAll(basket);
+        itemsNameList = basket.getItemsNameList();
+        basketView.getItems().clear();
+        basketView.getItems().addAll(itemsNameList);
     }
 
-    public void addItem(String name){   // ma być w baskecie ale nie mamy Itemów do dodawania i ciężko testować
-        bask.put(name,1);
+    public void addItem(Item item){   // ma być w baskecie ale nie mamy Itemów do dodawania i ciężko testować
+        basket.addItem(item);
         refreshList();
+
     }
 
     public void remove(ActionEvent event) throws IOException{
@@ -58,11 +66,9 @@ public class MainShopController implements Initializable {
         LogInController logger = loader.getController();
         if (logger.getLogged()) {
             try {
-                String[] basket = bask.keySet().toArray(new String[0]);
-                int index = basketView.getSelectionModel().getSelectedIndex();
-                System.out.println(index);
-                basketView.getItems().remove(index);
-                bask.remove(basket[index]);
+                Item item = basket.findItemByName(catchedItemName);
+                basket.removeItem(item);
+                refreshList();
             } catch (Exception e) {
                 System.out.println("no product chosen");
             }
@@ -94,6 +100,7 @@ public class MainShopController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchToLogIn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -101,11 +108,21 @@ public class MainShopController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchToArticles(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Articles.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void showLogOut(){
+        logOutButt.setVisible(true);
+    }
+
+    public void logOut(){
+        LogInController.setLogged(false);
+        logOutButt.setVisible(false);
     }
 }
