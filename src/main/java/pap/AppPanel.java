@@ -10,9 +10,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AppPanel extends Application {
-
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -25,7 +26,16 @@ public class AppPanel extends Application {
     }
 
     public static void main(String[] args) {
+        Item mango = new Item("mango", 100);
+        Item apple = new Item("apple", 50);
+
+        Map<Item, Integer> items = new HashMap<>();
+        items.put(apple,1);
+        items.put(mango,20);
+
+        Warehouse warehouse = new Warehouse(items);
+        Basket basket = new Basket(warehouse);
+
         launch(args);
     }
-
 }

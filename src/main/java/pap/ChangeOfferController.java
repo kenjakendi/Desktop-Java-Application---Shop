@@ -9,24 +9,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PayController {
+public class ChangeOfferController {
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    public void switchToMainShop(ActionEvent event) throws IOException {
-        buy();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
+    public void switchToManager(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
         root = loader.load();
-        MainShopController mainShop = loader.getController();
-        mainShop.refreshList();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    public void buy(){
-        Basket.buy();
     }
 }

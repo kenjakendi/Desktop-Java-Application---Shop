@@ -27,7 +27,7 @@ public class LogInController {
     private TextField password;
     @FXML
     private Label loginStatus;
-    static public boolean logged;
+    static public boolean logged = false;
 
     public void switchToMainShop(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
@@ -38,36 +38,25 @@ public class LogInController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
-   /*
-   // do wywalenia ???
-   public void switchToManagerPage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ManagerPage.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
+    public static void setLogged(boolean status){
+        logged = status;
     }
-    */
 
     public void switchToManagerPage(String log, ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
         root = loader.load();
         ManagerPageController managerPage = loader.getController();
         managerPage.changeName(log);
-        logged = true;
+        setLogged(true);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
-
-    public boolean getLogged(){
+    public static boolean getLogged(){
         return logged;
     }
 
@@ -86,30 +75,6 @@ public class LogInController {
         } catch (Exception localException){
             System.out.println("eerrr");
         }
-
-
-
-
-        //w tym miejscu możemy sprawdzać, czy obiekt managera istnieje w naszej bazie dannych z pracownikami. jeśli tak, to przechodzimy do strony ManagerPage
-
-        /*
-        // raczej do wywalenia bo w innej metodzie już
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
-        root = loader.load();
-        ManagerPageController managerPage = loader.getController();
-        managerPage.changeName(log);
-        logged = true;
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();*/
-
-
-        //switchToManagerPage(event);
         return our_manager.userData;
-    }
-
-    public void Tescik(MouseEvent event) throws IOException {
-        System.out.println("It works");
     }
 }

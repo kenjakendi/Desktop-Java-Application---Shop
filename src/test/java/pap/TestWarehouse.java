@@ -1,8 +1,10 @@
 package pap;
 
+import lombok.Data;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,8 +20,7 @@ public class TestWarehouse {
         peach.setId(2);
         items.put(peach, 4);
 
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
         Item foundApple = warehouse.getItemById(1);
         Item foundPeach = warehouse.getItemById(2);
@@ -31,8 +32,7 @@ public class TestWarehouse {
     @Test
     public void testGetItemByIdNoItem(){
         Map<Item, Integer> items = new HashMap<>();
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
         Item foundItem = warehouse.getItemById(10);
 
         Assert.assertNull(foundItem);
@@ -42,8 +42,7 @@ public class TestWarehouse {
     public void testAddItemNewItem(){
         Map<Item, Integer> items = new HashMap<>();
         Map<Item, Integer> expectedMap = new HashMap<>();
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
         Item apple = new Item("apple");
         expectedMap.put(apple, 1);
@@ -60,8 +59,7 @@ public class TestWarehouse {
         Item apple = new Item("apple");
         expectedMap.put(apple, 2);
         items.put(apple, 1);
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
         warehouse.addItem(apple);
 
         Assert.assertEquals(warehouse.getItems(), expectedMap);
@@ -71,8 +69,7 @@ public class TestWarehouse {
     public void testAddMoreItems(){
         Map<Item, Integer> items = new HashMap<>();
         Map<Item, Integer> expectedMap = new HashMap<>();
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
         Item apple = new Item("apple");
         expectedMap.put(apple, 4);
@@ -91,8 +88,7 @@ public class TestWarehouse {
         items.put(apple, 2);
         expectedMap.put(apple, 1);
 
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
         warehouse.removeItem(apple);
 
@@ -109,8 +105,7 @@ public class TestWarehouse {
         items.put(peach, 1);
         expectedMap.put(peach, 1);
 
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
         warehouse.removeItem(apple);
 
@@ -126,8 +121,7 @@ public class TestWarehouse {
         items.put(apple, 5);
         expectedMap.put(apple, 1);
 
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
         warehouse.removeMoreItems(apple, 4);
 
@@ -144,10 +138,39 @@ public class TestWarehouse {
         items.put(apple, 5);
         expectedMap.put(apple, 5);
 
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
-
+        Warehouse warehouse = new Warehouse(items);
         warehouse.removeMoreItems(peach, 3);
+
+        Assert.assertEquals(expectedMap, warehouse.getItems());
+    }
+
+    @Test
+    public void testGetItemsNameList(){
+        Map<Item, Integer> items = new HashMap<>();
+        ArrayList<String> itemsNameList= new ArrayList<>();
+        itemsNameList.add("peach");
+        itemsNameList.add("apple");
+        Item apple = new Item("apple");
+        Item peach = new Item("peach");
+        items.put(apple, 1);
+        items.put(peach, 1);
+
+        Warehouse warehouse = new Warehouse(items);
+
+        Assert.assertEquals(itemsNameList, warehouse.getItemsNameList());
+    }
+
+    @Test
+    public void testClearItems(){
+        Map<Item, Integer> items = new HashMap<>();
+        Map<Item, Integer> expectedMap = new HashMap<>();
+        Item apple = new Item("apple");
+        Item peach = new Item("peach");
+        items.put(apple, 1);
+        items.put(peach, 1);
+
+        Warehouse warehouse = new Warehouse(items);
+        warehouse.clearItems();
 
         Assert.assertEquals(expectedMap, warehouse.getItems());
     }

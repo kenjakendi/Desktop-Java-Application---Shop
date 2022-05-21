@@ -13,17 +13,16 @@ public class TestBasket {
         Item apple = new Item("apple");
         items.put(apple, 2);
 
-        Warehouse warehouse = new Warehouse();
-        warehouse.setItems(items);
+        Warehouse warehouse = new Warehouse(items);
 
-        Basket basket = new Basket();
-        basket.setWarehouse(warehouse);
+        Basket basket = new Basket(warehouse);
+        basket.resetBasket();
         basket.addItem(apple);
 
         Map<Item, Integer> expectedItems = new HashMap<>();
         expectedItems.put(apple, 1);
 
-        Assert.assertEquals(basket.getBasket(), expectedItems);
+        Assert.assertEquals(expectedItems, basket.getBasket());
     }
 
     @Test
