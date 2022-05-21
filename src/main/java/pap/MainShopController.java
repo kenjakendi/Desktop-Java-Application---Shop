@@ -16,7 +16,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import lombok.extern.java.Log;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,14 +30,14 @@ public class MainShopController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    static Basket basket = new Basket(); // to ma być koszyk
-    ArrayList<String> itemsNameList = basket.getItemsNameList();
+    static Basket basket = new Basket();
     private String catchItemName;
     @FXML
     Button logOutButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        refreshScene();
         basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
@@ -48,17 +47,19 @@ public class MainShopController implements Initializable {
         });
     }
 
-    public void refreshList(){  // żeby dodawać do koszyka trzeba go zmieniać na array[]
-        itemsNameList = basket.getItemsNameList();
+    public void refreshScene(){
         basketView.getItems().clear();
-        basketView.getItems().addAll(itemsNameList);
+        for (Item item: basket.basket.keySet())
+        {
+            String name = item.getName();
+            basketView.getItems().add(name);
+        }
         logOutButton.setVisible(LogInController.getLogged());
     }
 
-    public void addItem(Item item){   // ma być w baskecie ale nie mamy Itemów do dodawania i ciężko testować
+    public void addItem(Item item){
         basket.addItem(item);
-        refreshList();
-
+        refreshScene();
     }
 
     public void remove(ActionEvent event) throws IOException{
@@ -66,7 +67,7 @@ public class MainShopController implements Initializable {
             try {
                 Item item = basket.findItemByName(catchItemName);
                 basket.removeItem(item);
-                refreshList();
+                refreshScene();
             } catch (Exception e) {
                 System.out.println("no product chosen");
             }

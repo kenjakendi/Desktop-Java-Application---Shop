@@ -1,23 +1,15 @@
 package pap;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.*;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
 
 public class ManagerPageController {
     @FXML
@@ -66,8 +58,6 @@ public class ManagerPageController {
     public void switchToMainShop(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
-        MainShopController mainShop = loader.getController();
-        mainShop.refreshList();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

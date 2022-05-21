@@ -1,6 +1,5 @@
 package pap;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,17 +46,13 @@ public class ArticlesController implements Initializable {
         }).collect(Collectors.toList());
     }
 
-
     public void switchToMainShop(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
-        MainShopController mainShop = loader.getController();
-        mainShop.refreshList();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void getProductName(ActionEvent event) throws IOException {

@@ -1,6 +1,5 @@
 package pap;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -34,8 +32,6 @@ public class PlaceOrderController implements Initializable {
     @FXML
     private TableColumn<SupplierItem, Integer> quant_col;
     @FXML
-    private TableColumn<SupplierItem, Integer> price_col;
-    @FXML
     private TableColumn<SupplierItem, String> addit_col;
     @FXML
     private TextField itemId;
@@ -45,6 +41,8 @@ public class PlaceOrderController implements Initializable {
     private TextField itemQuant;
     @FXML
     private TextField itemComm;
+
+    static ObservableList<SupplierItem> items;
 
     public void switchToManager(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
@@ -61,7 +59,7 @@ public class PlaceOrderController implements Initializable {
                     itemName.getText(),
                     Integer.parseInt(itemQuant.getText()),
                     itemComm.getText());
-            ObservableList<SupplierItem> items = orderTable.getItems();
+            items = orderTable.getItems();
             items.add(item);
             orderTable.setItems(items);
         }
