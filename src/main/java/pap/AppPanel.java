@@ -15,7 +15,6 @@ import java.util.Map;
 
 public class AppPanel extends Application {
 
-
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainShop.fxml"));
@@ -39,5 +38,4 @@ public class AppPanel extends Application {
 
         launch(args);
     }
-
 }

@@ -14,8 +14,7 @@ public class Warehouse {
         this.items = items;
     }
 
-    public Warehouse(){
-    }
+    public Warehouse(){}
 
     public Item getItemById(int id){
         for (Item item :items.keySet()){

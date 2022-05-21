@@ -65,10 +65,13 @@ public class ArticlesController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
         MainShopController mainShop = loader.getController();
-        if (item.getName() != null)
+        try {
             mainShop.addItem(item);
-        else
-            mainShop.refreshList();
+        }
+        catch (Exception NullPointerException)
+        {
+            System.out.println("no product chosen");
+        };
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
