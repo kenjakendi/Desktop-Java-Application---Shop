@@ -84,6 +84,15 @@ public class Warehouse {
         items.clear();
     }
 
+    public void addMapOfItems(Map<Item, Integer> itemsToAdd){
+        for (Item item : itemsToAdd.keySet()){
+            addMoreItems(item, itemsToAdd.get(item));
+        }
+    }
+
+    public void completeRemoveItem(Item item){
+        items.remove(item);
+    }
 
     public boolean containItem(Item item){
         return items.containsKey(item);
