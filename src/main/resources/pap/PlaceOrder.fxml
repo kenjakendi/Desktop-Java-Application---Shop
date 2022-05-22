@@ -50,5 +50,6 @@
          </children>
       </VBox>
       <Button layoutX="142.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" text="submit" />
+      <Button layoutX="481.0" layoutY="330.0" mnemonicParsing="false" onAction="#placeOrder" text="złóż zamówienie" />
    </children>
 </AnchorPane>

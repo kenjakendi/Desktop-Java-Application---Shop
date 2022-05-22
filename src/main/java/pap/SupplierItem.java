@@ -3,12 +3,8 @@ package pap;
 import lombok.Data;
 
 @Data
-public class SupplierItem {
-    int id;
-    String name;
+public class SupplierItem extends Item{
     int quantity;
-    String comment;
-
 
     public SupplierItem(int id, String name, int quantity){
         this.id = id;
@@ -16,10 +12,10 @@ public class SupplierItem {
         this.quantity = quantity;
     }
 
-    public SupplierItem(int id, String name, int quantity, String comment){
+    public SupplierItem(int id, String name, int quantity, String description){
         this.id = id;
         this.name = name;
         this.quantity = quantity;
-        this.comment = comment;
+        this.description = description;
     }
 }

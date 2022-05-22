@@ -17,8 +17,6 @@ public class FinanceMonitorController {
     public void switchToMainShop(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
-        MainShopController mainShop = loader.getController();
-        mainShop.refreshList();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

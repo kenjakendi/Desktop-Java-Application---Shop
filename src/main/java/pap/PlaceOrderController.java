@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -18,12 +17,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PlaceOrderController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    static Map<Item, Integer> itemsToAdd = new HashMap<>();
 
     @FXML
     private TableView<SupplierItem> orderTable;
@@ -33,8 +35,6 @@ public class PlaceOrderController implements Initializable {
     private TableColumn<SupplierItem, String> name_col;
     @FXML
     private TableColumn<SupplierItem, Integer> quant_col;
-    @FXML
-    private TableColumn<SupplierItem, Integer> price_col;
     @FXML
     private TableColumn<SupplierItem, String> addit_col;
     @FXML
@@ -46,6 +46,12 @@ public class PlaceOrderController implements Initializable {
     @FXML
     private TextField itemComm;
 
+    SupplierItem chosen;
+
+    static ArrayList<SupplierItem> tempOrder = new ArrayList<>();
+
+    ObservableList<SupplierItem> items = FXCollections.observableArrayList(tempOrder);;
+
     public void switchToManager(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
         root = loader.load();
@@ -55,15 +61,34 @@ public class PlaceOrderController implements Initializable {
         stage.show();
     }
 
+    public void placeOrder(ActionEvent event){
+        Warehouse warehouse = new Warehouse();
+        warehouse.addMapOfItems(itemsToAdd);
+        tempOrder.clear();
+        items.clear();
+        itemsToAdd.clear();
+    }
+
+//    public void deleteItem(ActionEvent event){
+//        Warehouse warehouse = new Warehouse();
+//        warehouse.addMapOfItems(itemsToAdd);
+//        tempOrder.clear();
+//        items.clear();
+//        itemsToAdd.clear();
+//    }
+
     public void submit(ActionEvent event){
         try {
-            SupplierItem item = new SupplierItem(Integer.parseInt(itemId.getText()),
+            SupplierItem supplierItem = new SupplierItem(Integer.parseInt(itemId.getText()),
                     itemName.getText(),
                     Integer.parseInt(itemQuant.getText()),
                     itemComm.getText());
-            ObservableList<SupplierItem> items = orderTable.getItems();
-            items.add(item);
+            items.add(supplierItem);
+            Item itemToAdd = new Item(supplierItem.getName());
+            itemsToAdd.put(itemToAdd,  supplierItem.getQuantity());
+            items = orderTable.getItems();
             orderTable.setItems(items);
+            tempOrder = new ArrayList<>(items);
         }
         catch (Exception NumberFormatException)
         {
@@ -76,6 +101,8 @@ public class PlaceOrderController implements Initializable {
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
         quant_col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        addit_col.setCellValueFactory(new PropertyValueFactory<>("comment"));
+        addit_col.setCellValueFactory(new PropertyValueFactory<>("description"));
+        orderTable.setItems(items);
+        //chosen = orderTable.getSelectionModel().getSelectedItem();
     }
 }

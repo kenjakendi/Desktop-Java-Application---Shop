@@ -174,4 +174,45 @@ public class TestWarehouse {
 
         Assert.assertEquals(expectedMap, warehouse.getItems());
     }
+
+    @Test
+    public void testAddMapOfItems(){
+        Map<Item, Integer> items = new HashMap<>();
+        Map<Item, Integer> itemsToAdd = new HashMap<>();
+        Map<Item, Integer> expectedItems = new HashMap<>();
+
+        Item apple = new Item("apple");
+        apple.setId(1);
+        items.put(apple, 2);
+
+        Item peach = new Item("peach");
+        peach.setId(2);
+        itemsToAdd.put(peach, 4);
+        itemsToAdd.put(apple, 6);
+
+        expectedItems.put(apple,8);
+        expectedItems.put(peach,4);
+
+        Warehouse warehouse = new Warehouse(items);
+        warehouse.addMapOfItems(itemsToAdd);
+
+        Assert.assertEquals(expectedItems, warehouse.getItems());
+    }
+
+    @Test
+    public void testCompleteItems(){
+        Map<Item, Integer> items = new HashMap<>();
+        Map<Item, Integer> expectedItems = new HashMap<>();
+        Item apple = new Item("apple");
+        Item peach = new Item("peach");
+        items.put(apple, 100);
+        items.put(peach, 10);
+        expectedItems.put(peach,10);
+
+        Warehouse warehouse = new Warehouse(items);
+        warehouse.completeRemoveItem(apple);
+
+        Assert.assertEquals(expectedItems, warehouse.getItems());
+    }
+
 }
