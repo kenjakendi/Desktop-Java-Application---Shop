@@ -1,16 +1,19 @@
 package pap;
 
 import lombok.Data;
+import lombok.Setter;
 
 @Data
+@Setter
+
 public class Item {
     int id;
     String name;
-    int price;
+    double price;
     String description;
 
 
-    public Item(String name, int price){
+    public Item(String name, double price){
         this.name = name;
         this.price = price;
     }
@@ -19,4 +22,7 @@ public class Item {
         this.name = name;
     }
 
+    public Item() {
+
+    }
 }
