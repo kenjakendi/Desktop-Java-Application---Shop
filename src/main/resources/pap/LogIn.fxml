@@ -43,7 +43,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="22.0" layoutY="396.0" mnemonicParsing="false" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-background-radius: 10; -fx-border-radius: 10;" text="Pomoc" textFill="#6f4516">
+      <Button layoutX="22.0" layoutY="396.0" mnemonicParsing="false" onAction="#switchToHelp" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-background-radius: 10; -fx-border-radius: 10;" text="Pomoc" textFill="#6f4516">
          <font>
             <Font size="15.0" />
          </font></Button>

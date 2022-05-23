@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.MainShopController">
@@ -27,23 +28,30 @@
       </Button>
       <ListView fx:id="basketView" layoutX="72.0" layoutY="122.0" opacity="0.77" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="444.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToLogIn" prefHeight="35.0" prefWidth="99.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Zaloguj się" textFill="#6f4516" />
-      <Button alignment="CENTER" layoutX="452.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToPay" prefHeight="42.0" prefWidth="121.0" style="-fx-background-color: #e53c3c; -fx-background-radius: 10;" text="Zapłać" textFill="WHITE">
+      <Button alignment="CENTER" layoutX="423.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToPay" prefHeight="42.0" prefWidth="151.0" style="-fx-background-color: #e53c3c; -fx-background-radius: 10;" text="Zapłać" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
-      <Label fx:id="test" layoutX="334.0" layoutY="97.0" prefHeight="35.0" prefWidth="151.0" text="wybrany artykuł" />
+      <Label fx:id="test" layoutX="321.0" layoutY="105.0" prefHeight="35.0" prefWidth="151.0" text="wybrany artykuł" />
       <Button layoutX="284.0" layoutY="145.0" mnemonicParsing="false" onAction="#remove" prefHeight="35.0" prefWidth="121.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Usuń z koszyka" textFill="#6f4516" />
-      <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="284.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="279.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@graphics/cart.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="543.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="543.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@graphics/logo_man.png" />
          </image>
       </ImageView>
       <Button fx:id="logOutButton" layoutX="334.0" layoutY="28.0" mnemonicParsing="false" onAction="#logOut" prefHeight="35.0" prefWidth="99.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wyloguj się" textFill="#6f4516" visible="false" />
+      <Button layoutX="421.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchToHelp" prefHeight="35.0" prefWidth="121.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Pomoc" textFill="#6f4516" />
+      <Circle fill="#e53c3c" layoutX="564.0" layoutY="349.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label layoutX="558.0" layoutY="327.0" prefHeight="35.0" prefWidth="42.0" text="?" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -19,7 +19,7 @@ public class AppPanel extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainShop.fxml"));
         stage.setTitle("Shop Window");
-        stage.setResizable(false);
+//        stage.setFullScreen(true);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
