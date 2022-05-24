@@ -25,17 +25,16 @@ public class AppPanel extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
-        Item mango = new Item("mango", 100);
-        Item apple = new Item("apple", 50);
+    public static void main(String[] args) throws Exception {
 
-        Map<Item, Integer> items = new HashMap<>();
-        items.put(apple,1);
-        items.put(mango,20);
+            DBinquiry db = new DBinquiry();
 
-        Warehouse warehouse = new Warehouse(items);
-        Basket basket = new Basket(warehouse);
+            Map<Item, Integer> items = new HashMap<>(db.getALLProduct());
+            Warehouse warehouse = new Warehouse(items);
 
-        launch(args);
+            Basket basket = new Basket(warehouse);
+
+
+            launch(args);
     }
 }

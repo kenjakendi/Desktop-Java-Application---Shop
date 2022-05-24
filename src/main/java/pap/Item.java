@@ -6,11 +6,11 @@ import lombok.Data;
 public class Item {
     int id;
     String name;
-    int price;
+    double price;
     String description;
 
 
-    public Item(String name, int price){
+    public Item(String name, double price){
         this.name = name;
         this.price = price;
     }
