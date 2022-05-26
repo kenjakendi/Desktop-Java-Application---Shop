@@ -93,16 +93,16 @@ public class MainShopController implements Initializable {
         popUpWindow.setWidth(400);
         popUpWindow.setTitle("Alert Alarm Emergency");
         Label label1= new Label("          Proszę czekać, \nmenedżer przyjdzie za chwilę");
-        label1.setTextFill(Color.rgb(162, 92, 0));
+        label1.setTextFill(Color.rgb(111, 69, 22));
         label1.setFont(Font.font ("Verdana", 20));
         Button button1= new Button("Zamknij to okno");
-        button1.setBackground(new Background(new BackgroundFill(Color.rgb(162, 92, 0), new CornerRadii(0), Insets.EMPTY)));
+        button1.setBackground(new Background(new BackgroundFill(Color.rgb(111, 69, 22), new CornerRadii(0), Insets.EMPTY)));
         button1.setTextFill(Color.rgb(200, 255, 240));
         button1.setOnAction(e -> popUpWindow.close());
         VBox layout= new VBox(10);
         layout.getChildren().addAll(label1, button1);
         layout.setAlignment(Pos.CENTER);
-        layout.setBackground(new Background(new BackgroundFill(new LinearGradient(0,0,0,1,true, CycleMethod.NO_CYCLE, new Stop(0.1f, Color.rgb(231, 126, 111, .4)),
+        layout.setBackground(new Background(new BackgroundFill(new LinearGradient(0,0,0,1,true, CycleMethod.NO_CYCLE, new Stop(0.1f, Color.rgb(126, 231, 229, .6)),
                 new Stop(1.0f, Color.rgb(254, 249, 229, .4))), new CornerRadii(0), Insets.EMPTY)));
         Scene scene1 = new Scene(layout, 200, 200);
         popUpWindow.setScene(scene1);
@@ -116,26 +116,26 @@ public class MainShopController implements Initializable {
         popUpWindow.setHeight(300);
         popUpWindow.setTitle("Help");
         Label label1= new Label("Jeśli chcesz dodać artykuł do swojego koszyka, \n            przejdź na stronę wyszukiwania, \n wciskając <<Wyszukaj artykuł po nazwie>>.");
-        label1.setTextFill(Color.rgb(162, 92, 0));
+        label1.setTextFill(Color.rgb(111, 69, 22));
         label1.setFont(Font.font ("Verdana", 15));
 
         Button button1= new Button("Zamknij");
-        button1.setBackground(new Background(new BackgroundFill(Color.rgb(162, 92, 0), new CornerRadii(0), Insets.EMPTY)));
+        button1.setBackground(new Background(new BackgroundFill(Color.rgb(111, 69, 22), new CornerRadii(0), Insets.EMPTY)));
         button1.setTextFill(Color.rgb(200, 255, 240));
         button1.setOnAction(e -> popUpWindow.close());
 
         Label label2= new Label("Jeśli chcesz zawołać menedżera, wciśnij <<Pomoc asystenta>>.");
-        label2.setTextFill(Color.rgb(162, 92, 0));
+        label2.setTextFill(Color.rgb(111, 69, 22));
         label2.setFont(Font.font ("Verdana", 15));
 
         Button button2= new Button("Pomoc asystenta");
-        button2.setBackground(new Background(new BackgroundFill(Color.rgb(162, 92, 0), new CornerRadii(0), Insets.EMPTY)));
+        button2.setBackground(new Background(new BackgroundFill(Color.rgb(111, 69, 22), new CornerRadii(0), Insets.EMPTY)));
         button2.setTextFill(Color.rgb(200, 255, 240));
         button2.setOnAction(e -> {popUpWindow.close(); waitForManager();});
         VBox layout= new VBox(10);
         layout.getChildren().addAll(label1, button1, label2, button2);
         layout.setAlignment(Pos.CENTER);
-        layout.setBackground(new Background(new BackgroundFill(new LinearGradient(0,0,0,1,true, CycleMethod.NO_CYCLE, new Stop(0.1f, Color.rgb(231, 126, 111, .4)),
+        layout.setBackground(new Background(new BackgroundFill(new LinearGradient(0,0,0,1,true, CycleMethod.NO_CYCLE, new Stop(0.1f, Color.rgb(126, 231, 229, .6)),
                 new Stop(1.0f, Color.rgb(254, 249, 229, .4))), new CornerRadii(0), Insets.EMPTY)));
         Scene scene1 = new Scene(layout, 200, 200);
         popUpWindow.setScene(scene1);
