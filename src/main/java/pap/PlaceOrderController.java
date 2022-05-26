@@ -1,6 +1,8 @@
 package pap;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,8 +48,6 @@ public class PlaceOrderController implements Initializable {
     @FXML
     private TextField itemComm;
 
-    SupplierItem chosen;
-
     static ArrayList<SupplierItem> tempOrder = new ArrayList<>();
 
     ObservableList<SupplierItem> items = FXCollections.observableArrayList(tempOrder);;
@@ -69,13 +69,20 @@ public class PlaceOrderController implements Initializable {
         itemsToAdd.clear();
     }
 
-//    public void deleteItem(ActionEvent event){
-//        Warehouse warehouse = new Warehouse();
-//        warehouse.addMapOfItems(itemsToAdd);
-//        tempOrder.clear();
-//        items.clear();
-//        itemsToAdd.clear();
-//    }
+    public void delete(ActionEvent event){
+        SupplierItem selectedItem = orderTable.getSelectionModel().getSelectedItem();
+        orderTable.getItems().remove(selectedItem);
+
+        items = orderTable.getItems();
+        orderTable.setItems(items);
+        tempOrder = new ArrayList<>(items);
+
+        itemsToAdd.clear();
+        for (SupplierItem item: tempOrder) {
+            Item itemToAdd = new Item(item.getName());
+            itemsToAdd.put(itemToAdd, item.getQuantity());
+        }
+    }
 
     public void submit(ActionEvent event){
         try {

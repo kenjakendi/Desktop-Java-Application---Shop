@@ -49,7 +49,8 @@
             <TextField fx:id="itemComm" prefHeight="58.0" prefWidth="165.0" />
          </children>
       </VBox>
-      <Button layoutX="142.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" text="submit" />
+      <Button layoutX="142.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" text="dodaj" />
       <Button layoutX="481.0" layoutY="330.0" mnemonicParsing="false" onAction="#placeOrder" text="złóż zamówienie" />
+      <Button layoutX="348.0" layoutY="330.0" mnemonicParsing="false" onAction="#delete" text="usuń element" />
    </children>
 </AnchorPane>
