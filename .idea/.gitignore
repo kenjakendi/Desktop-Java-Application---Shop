@@ -7,5 +7,6 @@
 /dataSources/
 /dataSources.local.xml
 
-/test.txt
+../test.txt
+../target/
 
