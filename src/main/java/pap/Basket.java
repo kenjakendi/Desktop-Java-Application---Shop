@@ -89,4 +89,14 @@ public class Basket {
         return -1;
     }
 
+    public double calculatePrice(){
+        double price = 0;
+        for (Item item:basket.keySet()){
+            double itemPrice = item.getPrice();
+            int quantity = basket.get(item);
+            price+=itemPrice*quantity;
+        }
+        return price;
+    }
+
 }

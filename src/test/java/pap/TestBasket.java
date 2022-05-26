@@ -51,6 +51,7 @@ public class TestBasket {
         warehouse.setItems(items);
 
         Basket basket = new Basket();
+        basket.resetBasket();
         basket.setWarehouse(warehouse);
         basket.addMoreItems(apple, 3);
 
@@ -126,5 +127,25 @@ public class TestBasket {
 
         Assert.assertEquals(warehouse.getItems(), expectedItems);
         Assert.assertTrue(basket.getBasket().isEmpty());
+    }
+
+    @Test
+    public void testGetPrice(){
+        Map<Item, Integer> items = new HashMap<>();
+        Item apple = new Item("apple",10);
+        Item mango = new Item("mango",30);
+        items.put(apple, 4);
+        items.put(mango,5);
+
+        Warehouse warehouse = new Warehouse(items);
+
+        Basket basket = new Basket(warehouse);
+        basket.resetBasket();
+        basket.addMoreItems(apple,3);
+        basket.addMoreItems(mango,2);
+
+        double expectedPrice = 3*10+2*30;
+
+        Assert.assertEquals(expectedPrice, basket.calculatePrice(),0.1);
     }
 }
