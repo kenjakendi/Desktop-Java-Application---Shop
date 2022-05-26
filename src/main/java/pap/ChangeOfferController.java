@@ -60,22 +60,35 @@ public class ChangeOfferController implements Initializable {
 
     public void editId(TableColumn.CellEditEvent<Item, Integer> itemIntegerCellEditEvent) {
         Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        int quantity=item.getValue();
+        warehouse.completeRemoveItem(item.getKey());
         item.getKey().setId(itemIntegerCellEditEvent.getNewValue());
+        warehouse.addMoreItems(item.getKey(),quantity);
+
     }
 
     public void editName(TableColumn.CellEditEvent<Item, String> itemStringCellEditEvent) {
         Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        int quantity=item.getValue();
+        warehouse.completeRemoveItem(item.getKey());
         item.getKey().setName(itemStringCellEditEvent.getNewValue());
+        warehouse.addMoreItems(item.getKey(),quantity);
     }
 
     public void editPrice(TableColumn.CellEditEvent<Item, Double> itemDoubleCellEditEvent) {
         Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        int quantity=item.getValue();
+        warehouse.completeRemoveItem(item.getKey());
         item.getKey().setPrice(itemDoubleCellEditEvent.getNewValue());
+        warehouse.addMoreItems(item.getKey(),quantity);
     }
 
     public void editDescription(TableColumn.CellEditEvent<Item, String> itemStringCellEditEvent) {
         Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        int quantity=item.getValue();
+        warehouse.completeRemoveItem(item.getKey());
         item.getKey().setDescription(itemStringCellEditEvent.getNewValue());
+        warehouse.addMoreItems(item.getKey(),quantity);
     }
 
     @Override
