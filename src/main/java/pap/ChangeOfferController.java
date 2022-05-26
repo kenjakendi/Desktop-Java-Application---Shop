@@ -24,6 +24,7 @@ import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ChangeOfferController implements Initializable {
@@ -32,27 +33,21 @@ public class ChangeOfferController implements Initializable {
     private Parent root;
 
     Warehouse warehouse = new Warehouse();
-    @FXML
-    private TableView<Item> orderTable;
-    @FXML
-    private TableColumn<Item, Integer> id_col;
-    @FXML
-    private TableColumn<Item, String> name_col;
-    @FXML
-    private TableColumn<Warehouse, Integer> quant_col;
-    @FXML
-    private TableColumn<Item, Double> price_col;
-    @FXML
-    private TableColumn<Item, String> addit_col;
 
-    public ObservableList<Item> convertWarehouse(){
-        ObservableList<Item> items = FXCollections.observableArrayList();
-        for (Item item: warehouse.items.keySet())
-        {
-            items.add(item);
-        }
-        return items;
-    }
+    ObservableList<Map.Entry<Item, Integer>> entries = FXCollections.observableArrayList(warehouse.items.entrySet());
+
+    @FXML
+    private TableView<Map.Entry<Item, Integer>> orderTable;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, Integer> id_col;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, String> name_col;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, Integer> quant_col;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, Double> price_col;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, String> addit_col;
 
     public void switchToManager(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerPage.fxml"));
@@ -64,69 +59,72 @@ public class ChangeOfferController implements Initializable {
     }
 
     public void editId(TableColumn.CellEditEvent<Item, Integer> itemIntegerCellEditEvent) {
-        Item item = orderTable.getSelectionModel().getSelectedItem();
-        item.setId(itemIntegerCellEditEvent.getNewValue());
+        Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        item.getKey().setId(itemIntegerCellEditEvent.getNewValue());
     }
 
     public void editName(TableColumn.CellEditEvent<Item, String> itemStringCellEditEvent) {
-        Item item = orderTable.getSelectionModel().getSelectedItem();
-        item.setName(itemStringCellEditEvent.getNewValue());
+        Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        item.getKey().setName(itemStringCellEditEvent.getNewValue());
     }
 
     public void editPrice(TableColumn.CellEditEvent<Item, Double> itemDoubleCellEditEvent) {
-        Item item = orderTable.getSelectionModel().getSelectedItem();
-        item.setPrice(itemDoubleCellEditEvent.getNewValue());
+        Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        item.getKey().setPrice(itemDoubleCellEditEvent.getNewValue());
     }
 
     public void editDescription(TableColumn.CellEditEvent<Item, String> itemStringCellEditEvent) {
-        Item item = orderTable.getSelectionModel().getSelectedItem();
-        item.setDescription(itemStringCellEditEvent.getNewValue());
+        Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+        item.getKey().setDescription(itemStringCellEditEvent.getNewValue());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        id_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Item, Integer>, ObservableValue<Integer>>() {
+        id_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Integer>, ObservableValue<Integer>>() {
             @Override
-            public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Item, Integer> param) {
-                int id = param.getValue().getId();
+            public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Integer> param) {
+                int id = param.getValue().getKey().getId();
                 ObservableValue<Integer> obs_id = new ReadOnlyObjectWrapper<>(id);
                 return obs_id;
             }
         });
-        name_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Item, String>, ObservableValue<String>>() {
+        name_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, String>, ObservableValue<String>>() {
             @Override
-            public ObservableValue<String> call(TableColumn.CellDataFeatures<Item, String> param) {
-                String name = param.getValue().getName();
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, String> param) {
+                String name = param.getValue().getKey().getName();
                 ObservableValue<String> obs_name = new ReadOnlyObjectWrapper<>(name);
                 return obs_name;
             }
         });
-        price_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Item, Double>, ObservableValue<Double>>() {
+        quant_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Integer>, ObservableValue<Integer>>() {
             @Override
-            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Item, Double> param) {
-                Double price = param.getValue().getPrice();
+            public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Integer> param) {
+                int quantity = param.getValue().getValue();
+                ObservableValue<Integer> obs_quantity = new ReadOnlyObjectWrapper<>(quantity);
+                return obs_quantity;
+            }
+        });
+        price_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Double>, ObservableValue<Double>>() {
+            @Override
+            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Double> param) {
+                Double price = param.getValue().getKey().getPrice();
                 ObservableValue<Double> obs_price = new ReadOnlyObjectWrapper<>(price);
                 return obs_price;
             }
         });
-//        quant_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Warehouse, Integer>, ObservableValue<Integer>>() {
-//            @Override
-//            public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Warehouse, Integer> quantity) {
-//                return null;
-//            }
-//        });
-        addit_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Item, String>, ObservableValue<String>>() {
+        addit_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, String>, ObservableValue<String>>() {
             @Override
-            public ObservableValue<String> call(TableColumn.CellDataFeatures<Item, String> param) {
-                String description = param.getValue().getDescription();
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, String> param) {
+                String description = param.getValue().getKey().getDescription();
                 ObservableValue<String> obs_description = new ReadOnlyObjectWrapper<>(description);
                 return obs_description;
             }
         });
-        orderTable.setItems(convertWarehouse());
-        id_col.setCellFactory(TextFieldTableCell.<Item, Integer>forTableColumn(new IntegerStringConverter()));
+
+        orderTable.setItems(entries);
+        id_col.setCellFactory(TextFieldTableCell.<Map.Entry<Item, Integer>, Integer>forTableColumn(new IntegerStringConverter()));
         name_col.setCellFactory(TextFieldTableCell.forTableColumn());
-        price_col.setCellFactory(TextFieldTableCell.<Item, Double>forTableColumn(new DoubleStringConverter()));
+        price_col.setCellFactory(TextFieldTableCell.<Map.Entry<Item, Integer>, Double>forTableColumn(new DoubleStringConverter()));
         addit_col.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 }
