@@ -61,6 +61,7 @@ public class MagasinViewController implements Initializable {
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
         price_col.setCellValueFactory(new PropertyValueFactory<>("price"));
         //quant_col.setCellValueFactory(new PropertyValueFactory<>());
+        addit_col.setCellValueFactory(new PropertyValueFactory<>("description"));
         orderTable.setItems(convertWarehouse());
     }
 }
