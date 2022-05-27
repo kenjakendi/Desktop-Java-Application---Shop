@@ -177,4 +177,14 @@ public class MainShopController implements Initializable {
         LogInController.setLogged(false);
         logOutButton.setVisible(false);
     }
+
+//    public void goToFullScreen(ActionEvent event) throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("MainShop.fxml"));
+//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//
+//        stage.setFullScreen(true);
+//        scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 }
