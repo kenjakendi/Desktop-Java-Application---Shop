@@ -2,7 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -55,7 +56,14 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <ListView fx:id="productList" layoutX="44.0" layoutY="62.0" onMouseClicked="#itemDetails" prefHeight="157.0" prefWidth="372.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0" />
+                                          <TableView fx:id="productTable" layoutY="49.0" onMouseClicked="#itemDetails" prefHeight="206.0" prefWidth="322.0">
+                                            <columns>
+                                              <TableColumn fx:id="name_col" prefWidth="116.6666259765625" sortable="false" text="name" />
+                                                <TableColumn prefWidth="83.33331298828125" sortable="false" />
+                                              <TableColumn fx:id="price_col" prefWidth="57.3333740234375" sortable="false" text="price" />
+                                                <TableColumn fx:id="quan_col" minWidth="0.0" prefWidth="64.6666259765625" sortable="false" text="quantity" />
+                                            </columns>
+                                          </TableView>
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -69,7 +77,7 @@
                                     <AnchorPane prefHeight="300.0" prefWidth="300.0" />
                                     <AnchorPane prefHeight="300.0" prefWidth="400.0">
                                        <children>
-                                          <Button fx:id="enterNameButton1" layoutX="14.0" mnemonicParsing="false" onAction="#search" prefHeight="44.0" prefWidth="139.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wyszukaj" textFill="#6f4516" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="enterNameButton1" layoutX="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="139.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wyszukaj" textFill="#6f4516" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
@@ -81,7 +89,7 @@
                                                 </ImageView>
                                              </graphic>
                                           </Button>
-                                          <Button fx:id="enterNameButton" layoutX="-2.0" layoutY="180.0" mnemonicParsing="false" onAction="#getProductName" prefHeight="44.0" prefWidth="155.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 8; -fx-border-radius: 8;" text="Dodaj" textFill="#6f4516" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="14.0">
+                                          <Button fx:id="enterNameButton" layoutX="-2.0" layoutY="180.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="155.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 8; -fx-border-radius: 8;" text="Dodaj" textFill="#6f4516" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="14.0">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>

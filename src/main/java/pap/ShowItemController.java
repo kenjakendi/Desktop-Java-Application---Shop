@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,18 +26,14 @@ public class ShowItemController implements Initializable {
     @FXML
     Label amount;
     @FXML
-    TextField reguiredAmount;
+    TextField requiredAmount;
     @Getter @Setter
     Item item;
 
 
-    public void switchToMainShop(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
-        root = loader.load();
+    public void cancel(ActionEvent event) throws IOException {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        stage.close();
     }
 
     public void setAvailableAmount(Item item){
@@ -46,11 +41,15 @@ public class ShowItemController implements Initializable {
     }
 
     public void enterAmount(ActionEvent event) throws IOException {
-        int chosen = Integer.parseInt(reguiredAmount.getText());
-        if (chosen <= Integer.parseInt(amount.getText())){
+        int chosen = Integer.parseInt(requiredAmount.getText());
+        int in_basket = 0;
+        if (basket.containItem(item)){
+            in_basket = basket.getQuantity(item);
+        }
+        if ((chosen <= Integer.parseInt(amount.getText())) && (chosen <= (Integer.parseInt(amount.getText())-in_basket))){
             for (int i = 0; i < chosen; i++)
                 basket.addItem(item);
-            switchToMainShop(event);
+            cancel(event);
         }
         else {
             System.out.println("too many chosen");

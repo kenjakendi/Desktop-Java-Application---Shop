@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.ShowItemController">
    <children>
-      <Button layoutX="286.0" layoutY="342.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="44.0" prefWidth="300.0" text="Wróć do sklepu" textFill="#6f4516">
+      <Button layoutX="286.0" layoutY="342.0" mnemonicParsing="false" onAction="#cancel" prefHeight="44.0" prefWidth="300.0" text="Anuluj" textFill="#6f4516">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -25,7 +25,7 @@
             <Font name="Arial Bold Italic" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="reguiredAmount" layoutX="286.0" layoutY="274.0" prefHeight="25.0" prefWidth="180.0" promptText="podaj liczbę">
+      <TextField fx:id="requiredAmount" layoutX="286.0" layoutY="274.0" prefHeight="25.0" prefWidth="180.0" promptText="podaj liczbę">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
