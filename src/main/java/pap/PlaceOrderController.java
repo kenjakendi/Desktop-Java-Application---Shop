@@ -110,6 +110,5 @@ public class PlaceOrderController implements Initializable {
         quant_col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         addit_col.setCellValueFactory(new PropertyValueFactory<>("description"));
         orderTable.setItems(items);
-        //chosen = orderTable.getSelectionModel().getSelectedItem();
     }
 }

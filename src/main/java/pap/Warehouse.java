@@ -4,14 +4,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Warehouse {
     @Getter @Setter
     static Map<Item, Integer> items;
+    private static HashSet<Integer> id_set = new HashSet<Integer>();
 
     public Warehouse(Map<Item, Integer> items){
         this.items = items;
+        for (Item item : items.keySet()){
+            id_set.add(item.getId());
+        }
     }
 
     public Warehouse(){}
@@ -20,16 +26,6 @@ public class Warehouse {
         for (Item item :items.keySet()){
             int itemId = item.getId();
             if (itemId == id) {
-                return item;
-            }
-        }
-        return null;
-    }
-
-    public Item findItemByName(String name){
-        for (Item item :items.keySet()){
-            String itemName = item.getName();
-            if (itemName.equals(name)) {
                 return item;
             }
         }
@@ -82,6 +78,7 @@ public class Warehouse {
 
     public void clearItems(){
         items.clear();
+        id_set.clear();
     }
 
     public void addMapOfItems(Map<Item, Integer> itemsToAdd){

@@ -47,7 +47,7 @@ public class ArticlesController implements Initializable {
         ObservableList<Map.Entry<Item, Integer>> entries = FXCollections.observableArrayList(warehouse.getItems().entrySet());
         for (Iterator<Map.Entry<Item, Integer>> it = entries.iterator(); it.hasNext(); ) {
             Map.Entry<Item, Integer> entry = it.next();
-            if (entry.getKey().getPrice() == 0.0 || entry.getValue() == 0){
+            if (entry.getKey().getPrice() == 0.0 || entry.getValue() == 0 || entry.getKey().getName() == null){
                 it.remove();
             }
         }
@@ -73,7 +73,7 @@ public class ArticlesController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowItem.fxml"));
         Parent root = loader.load();
         ShowItemController showItem = loader.getController();
-        showItem.setAvailableAmount(item);
+        showItem.setLabels(item);
         showItem.setItem(item);
         Scene scene = new Scene(root);
         stage.setScene(scene);

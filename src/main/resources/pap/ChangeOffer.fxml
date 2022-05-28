@@ -35,5 +35,6 @@
             <TableColumn fx:id="addit_col" onEditCommit="#editDescription" prefWidth="117.99996948242188" text="additional_info" />
          </columns>
       </TableView>
+      <Button layoutX="322.0" layoutY="378.0" mnemonicParsing="false" onAction="#remove" text="usuń" />
    </children>
 </AnchorPane>

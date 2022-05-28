@@ -2,7 +2,6 @@ package pap;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -27,6 +26,8 @@ public class ShowItemController implements Initializable {
     Label amount;
     @FXML
     TextField requiredAmount;
+    @FXML
+    Label productName;
     @Getter @Setter
     Item item;
 
@@ -36,8 +37,9 @@ public class ShowItemController implements Initializable {
         stage.close();
     }
 
-    public void setAvailableAmount(Item item){
+    public void setLabels(Item item){
         amount.setText(warehouse.getQuantity(item).toString());
+        productName.setText(item.getName());
     }
 
     public void enterAmount(ActionEvent event) throws IOException {

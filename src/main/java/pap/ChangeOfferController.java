@@ -24,6 +24,7 @@ import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -56,6 +57,23 @@ public class ChangeOfferController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void remove(ActionEvent event){
+        try {
+            Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
+//            Iterator<Map.Entry<Item, Integer>> it = entries.iterator();
+//            it.hasNext();
+//            Map.Entry<Item, Integer> entry = it.next();
+            orderTable.getItems().remove(item);
+            entries = orderTable.getItems();
+            orderTable.setItems(entries);
+            warehouse.completeRemoveItem(item.getKey());
+        }
+        catch (Exception exception){
+            System.out.println("xd");
+        }
+
     }
 
     public void editId(TableColumn.CellEditEvent<Item, Integer> itemIntegerCellEditEvent) {
