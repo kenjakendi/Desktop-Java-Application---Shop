@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Vector;
 
 public class FinanceMonitorController implements Initializable {
     private Stage stage;
@@ -27,23 +28,38 @@ public class FinanceMonitorController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Apples", 2),
-                        new PieChart.Data("Oranges", 25),
-                        new PieChart.Data("Grapes", 50),
-                        new PieChart.Data("Melons", 3));
+        DBinquiry db = new DBinquiry();
+        Vector <Double> incoms = new Vector<Double>();
+        try {
+            incoms.add(db.getTransaction(Warehouse.getLASTid()));
+            incoms.add(db.getTransaction(Warehouse.getLASTid()-1));
+            incoms.add(db.getTransaction(Warehouse.getLASTid()-2));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ObservableList<PieChart.Data> pieChartData = null;
+
+            pieChartData = FXCollections.observableArrayList(
+                    new PieChart.Data(String.valueOf(Warehouse.getLASTid()), incoms.get(0)),
+                    new PieChart.Data(String.valueOf(Warehouse.getLASTid()-1), incoms.get(1)),
+                    new PieChart.Data(String.valueOf(Warehouse.getLASTid()-2), incoms.get(2)));
+
+
+
 
 
         pieChartData.forEach(data ->
                 data.nameProperty().bind(
                         Bindings.concat(
-                                data.getName(), " amount: ", data.pieValueProperty()
+                                data.getName(), " zarobek: ", data.pieValueProperty()
                         )
                 )
         );
 
         pieChart.getData().addAll(pieChartData);
+
     }
 
     public void switchToMainShop(ActionEvent event) throws IOException {

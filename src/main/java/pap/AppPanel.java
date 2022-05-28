@@ -32,6 +32,7 @@ public class AppPanel extends Application {
 
             Map<Item, Integer> items = new HashMap<>(db.getALLProduct());
             Warehouse warehouse = new Warehouse(items);
+            warehouse.setLASTid(db.getLastId());
 
 
             Basket basket = new Basket(warehouse);
@@ -41,7 +42,7 @@ public class AppPanel extends Application {
                 try {
 
                     warehouse.dropAllitemsToBase();
-                    db.insertStatistics(2,1.1);
+                    //db.insertStatistics(2,1.1);
                     System.out.println(db.getLastId());
 
                 } catch (Exception e) {

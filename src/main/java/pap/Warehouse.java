@@ -12,7 +12,8 @@ public class Warehouse {
     @Getter @Setter
     static Map<Item, Integer> items;
     private static HashSet<Integer> id_set = new HashSet<Integer>();
-
+    @Getter @Setter
+    public static int LASTid;
 
     public Warehouse(Map<Item, Integer> items){
         this.items = items;

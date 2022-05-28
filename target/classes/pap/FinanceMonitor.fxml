@@ -25,7 +25,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Label layoutX="54.0" layoutY="66.0" text="Statystyka udziału zarobków w kolejnych sesjach sklepu" textFill="#2586e5">
+      <Label layoutX="110.0" layoutY="66.0" text="Statystyka zarobków w ostatnich sesjach sklepu" textFill="#2586e5">
          <font>
             <Font name="Arial Bold Italic" size="19.0" />
          </font>
@@ -35,6 +35,6 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <PieChart fx:id="pieChart" layoutX="104.0" layoutY="96.0" prefHeight="271.0" prefWidth="412.0" />
+      <PieChart fx:id="pieChart" layoutX="94.0" layoutY="97.0" prefHeight="271.0" prefWidth="412.0" />
    </children>
 </AnchorPane>

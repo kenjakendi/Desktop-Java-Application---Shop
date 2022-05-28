@@ -27,7 +27,7 @@ public class PayController {
     public void buy() throws Exception {
         DBinquiry db = new DBinquiry();
         double price = Basket.calculatePrice();
-        db.insertStatistics(1, price);
+        db.insertStatistics(Warehouse.getLASTid()+1, price);
         Basket.buy();
 
     }

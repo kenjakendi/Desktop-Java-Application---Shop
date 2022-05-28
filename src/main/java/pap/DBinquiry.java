@@ -149,7 +149,7 @@ public class DBinquiry {
         PreparedStatement pr = null;
 
         String sql =  "INSERT INTO transactions (id, income)" + "VALUES( ?, ?);";
-   
+
         try {
             pr = this.connection.prepareStatement(sql);
             pr.setInt(1, id);
@@ -187,4 +187,27 @@ public class DBinquiry {
         }
     }
 
+    public double getTransaction(int id) throws Exception {
+        PreparedStatement pr = null;
+        ResultSet rs = null;
+
+        String sql = "SELECT * FROM transactions where id = ?";
+        try {
+            pr = this.connection.prepareStatement(sql);
+            pr.setInt(1, id);
+
+            rs = pr.executeQuery();
+
+            double income = 0;
+            while (rs.next()){
+                income = income + rs.getDouble(2);
+            }
+            return income;
+        } catch (SQLException ex) {
+            return 0;
+        } finally {
+            pr.close();
+            rs.close();
+        }
+    }
 }
