@@ -55,7 +55,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <ListView fx:id="productList" layoutX="44.0" layoutY="62.0" prefHeight="157.0" prefWidth="372.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0" />
+                                          <ListView fx:id="productList" layoutX="44.0" layoutY="62.0" onMouseClicked="#itemDetails" prefHeight="157.0" prefWidth="372.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0" />
                                        </children>
                                     </AnchorPane>
                                  </children>

@@ -7,9 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.text.*;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +25,7 @@ public class ArticlesController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private boolean popUpOpen = false;
     @FXML
     private TextField productName;
     Warehouse warehouse = new Warehouse();
@@ -31,6 +37,21 @@ public class ArticlesController implements Initializable {
     public void search(ActionEvent event){
         productList.getItems().clear();
         productList.getItems().addAll(searchList(productName.getText(),itemsNameList));
+    }
+
+    public void itemDetails(MouseEvent event) throws IOException {
+        String itemName = productList.getSelectionModel().getSelectedItem();
+        Item item = warehouse.findItemByName(itemName);
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowItem.fxml"));
+        Parent root = loader.load();
+        ShowItemController showItem = loader.getController();
+        showItem.setAvailableAmount(item);
+        showItem.setItem(item);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
     }
 
     public Item selectedItem(){
