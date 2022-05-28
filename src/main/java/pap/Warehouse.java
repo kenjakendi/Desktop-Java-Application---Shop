@@ -13,6 +13,7 @@ public class Warehouse {
     static Map<Item, Integer> items;
     private static HashSet<Integer> id_set = new HashSet<Integer>();
 
+
     public Warehouse(Map<Item, Integer> items){
         this.items = items;
         for (Item item : items.keySet()){
@@ -35,7 +36,7 @@ public class Warehouse {
         DBinquiry db = new DBinquiry();
         for (Item item :items.keySet()) {
 
-            db.dropToBase(item, items.get(item) );
+            db.dropToBase(item, items.get(item));
         }
     }
 

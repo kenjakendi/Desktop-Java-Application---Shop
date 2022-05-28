@@ -33,6 +33,7 @@ public class AppPanel extends Application {
             Map<Item, Integer> items = new HashMap<>(db.getALLProduct());
             Warehouse warehouse = new Warehouse(items);
 
+
             Basket basket = new Basket(warehouse);
 
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
@@ -40,6 +41,8 @@ public class AppPanel extends Application {
                 try {
 
                     warehouse.dropAllitemsToBase();
+                    db.insertStatistics(2,1.1);
+                    System.out.println(db.getLastId());
 
                 } catch (Exception e) {
                     e.printStackTrace();

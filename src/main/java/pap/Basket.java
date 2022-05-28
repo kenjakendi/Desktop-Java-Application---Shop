@@ -16,6 +16,7 @@ public class Basket {
     @Setter @Getter
     static Warehouse warehouse;
 
+
     public Basket(){}
 
     public Basket(Warehouse warehouse){
@@ -90,7 +91,7 @@ public class Basket {
         return -1;
     }
 
-    public double calculatePrice(){
+    public static double calculatePrice(){
         double price = 0;
         for (Item item:basket.keySet()){
             double itemPrice = item.getPrice();

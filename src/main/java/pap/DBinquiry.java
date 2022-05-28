@@ -145,4 +145,46 @@ public class DBinquiry {
 
     }
 
+    public void insertStatistics(int id, double income) throws Exception {
+        PreparedStatement pr = null;
+
+        String sql =  "INSERT INTO transactions (id, income)" + "VALUES( ?, ?);";
+   
+        try {
+            pr = this.connection.prepareStatement(sql);
+            pr.setInt(1, id);
+            pr.setDouble(2, income);
+            pr.execute();
+
+
+        } catch (SQLException ex) {
+
+        } finally {
+            pr.close();
+
+        }
+
+    }
+
+    public int getLastId() throws Exception {
+        PreparedStatement pr = null;
+        ResultSet rs = null;
+
+        String sql = "SELECT * FROM transactions ORDER BY id DESC";
+        try {
+            pr = this.connection.prepareStatement(sql);
+
+            rs = pr.executeQuery();
+            rs.next();
+
+            int id = rs.getInt(1);
+            return id;
+        } catch (SQLException ex) {
+            return 0;
+        } finally {
+            pr.close();
+            rs.close();
+        }
+    }
+
 }

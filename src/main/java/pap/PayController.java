@@ -14,7 +14,7 @@ public class PayController {
     private Scene scene;
     private Parent root;
 
-    public void switchToMainShop(ActionEvent event) throws IOException {
+    public void switchToMainShop(ActionEvent event) throws Exception {
         buy();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainShop.fxml"));
         root = loader.load();
@@ -24,7 +24,11 @@ public class PayController {
         stage.show();
     }
 
-    public void buy(){
+    public void buy() throws Exception {
+        DBinquiry db = new DBinquiry();
+        double price = Basket.calculatePrice();
+        db.insertStatistics(1, price);
         Basket.buy();
+
     }
 }

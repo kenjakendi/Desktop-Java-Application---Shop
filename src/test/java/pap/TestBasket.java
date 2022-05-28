@@ -104,7 +104,7 @@ public class TestBasket {
     }
 
     @Test
-    public void testBuy(){
+    public void testBuy() throws Exception {
         Map<Item, Integer> items = new HashMap<>();
         Item apple = new Item("apple");
         items.put(apple, 2);
