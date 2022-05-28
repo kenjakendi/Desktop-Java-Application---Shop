@@ -38,11 +38,9 @@ public class AppPanel extends Application {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
                 try {
-                    db.setProduct("mango", 110);
-                    Item item = new Item();
-                    item = warehouse.getItemById(7);
-                    int ile = warehouse.getQuantity(item);
-                    db.dropToBase(item, ile);
+
+                    warehouse.dropAllitemsToBase();
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

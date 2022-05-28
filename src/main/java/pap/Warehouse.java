@@ -31,6 +31,13 @@ public class Warehouse {
         }
         return null;
     }
+    public void dropAllitemsToBase() throws Exception {
+        DBinquiry db = new DBinquiry();
+        for (Item item :items.keySet()) {
+
+            db.dropToBase(item, items.get(item) );
+        }
+    }
 
     public void addItem(Item item){
         if (containItem(item)){

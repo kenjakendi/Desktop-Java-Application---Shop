@@ -57,6 +57,7 @@ public class Basket {
     }
 
     public static void buy(){
+
         for (Item item : basket.keySet()){
             warehouse.removeMoreItems(item, basket.get(item));
         }
