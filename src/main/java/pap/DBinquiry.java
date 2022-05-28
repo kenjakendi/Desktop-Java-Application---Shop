@@ -121,4 +121,28 @@ public class DBinquiry {
 
     }
 
+    public void dropToBase(Item item, int volume ) throws Exception {
+        PreparedStatement pr = null;
+
+        String sql =  "INSERT OR REPLACE INTO products (id, name, price, volume)" + "VALUES( ?, ? , ?, ?);";
+
+        try {
+            pr = this.connection.prepareStatement(sql);
+            pr.setInt(1, item.getId());
+            pr.setString(2, item.getName());
+            pr.setDouble(3, item.getPrice());
+            pr.setInt(4,volume);
+
+            pr.execute();
+
+
+        } catch (SQLException ex) {
+
+        } finally {
+            pr.close();
+
+        }
+
+    }
+
 }

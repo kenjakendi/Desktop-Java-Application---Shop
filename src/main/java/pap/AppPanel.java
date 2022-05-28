@@ -27,6 +27,7 @@ public class AppPanel extends Application {
 
     public static void main(String[] args) throws Exception {
 
+
             DBinquiry db = new DBinquiry();
 
             Map<Item, Integer> items = new HashMap<>(db.getALLProduct());
@@ -34,7 +35,23 @@ public class AppPanel extends Application {
 
             Basket basket = new Basket(warehouse);
 
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            public void run() {
+                try {
+                    db.setProduct("mango", 110);
+                    Item item = new Item();
+                    item = warehouse.getItemById(7);
+                    int ile = warehouse.getQuantity(item);
+                    db.dropToBase(item, ile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            }));
 
             launch(args);
+
+
     }
+
 }
