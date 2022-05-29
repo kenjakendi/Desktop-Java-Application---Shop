@@ -31,16 +31,13 @@
       </Button>
       <TableView fx:id="orderTable" editable="true" layoutX="216.0" layoutY="130.0" prefHeight="184.0" prefWidth="368.0">
          <columns>
-            <TableColumn fx:id="id_col" prefWidth="38.666656494140625" text="id" />
             <TableColumn fx:id="name_col" prefWidth="138.66666412353516" text="product_name" />
             <TableColumn fx:id="quant_col" prefWidth="74.6666259765625" text="quantity" />
-            <TableColumn fx:id="addit_col" prefWidth="111.33331298828125" text="additional_info" />
+            <TableColumn fx:id="addit_col" prefWidth="152.66665649414062" text="additional_info" />
          </columns>
       </TableView>
       <VBox layoutX="28.0" layoutY="122.0" prefHeight="200.0" prefWidth="165.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID:" />
-            <TextField fx:id="itemId" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter name:" />
             <TextField fx:id="itemName" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter quantity:" />

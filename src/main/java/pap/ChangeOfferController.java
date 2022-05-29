@@ -62,18 +62,18 @@ public class ChangeOfferController implements Initializable {
     public void remove(ActionEvent event){
         try {
             Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
-//            Iterator<Map.Entry<Item, Integer>> it = entries.iterator();
-//            it.hasNext();
-//            Map.Entry<Item, Integer> entry = it.next();
-            orderTable.getItems().remove(item);
-            entries = orderTable.getItems();
+            for (Iterator<Map.Entry<Item, Integer>> it = entries.iterator(); it.hasNext(); ) {
+                Map.Entry<Item, Integer> entry = it.next();
+                if (entry == item){
+                    it.remove();
+                }
+            }
             orderTable.setItems(entries);
             warehouse.completeRemoveItem(item.getKey());
         }
         catch (Exception exception){
-            System.out.println("xd");
+            System.out.println("problem with item removal");
         }
-
     }
 
     public void editId(TableColumn.CellEditEvent<Item, Integer> itemIntegerCellEditEvent) {

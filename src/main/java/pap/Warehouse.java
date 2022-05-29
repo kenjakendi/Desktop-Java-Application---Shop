@@ -3,15 +3,13 @@ package pap;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Warehouse {
     @Getter @Setter
     static Map<Item, Integer> items;
-    private static HashSet<Integer> id_set = new HashSet<Integer>();
+    @Getter @Setter
+    static HashSet<Integer> id_set = new HashSet<Integer>();
     @Getter @Setter
     public static int LASTid;
 
@@ -47,6 +45,9 @@ public class Warehouse {
             items.replace(item, oldValue + 1);
         } else{
             items.put(item, 1);
+            if (item.getId() == 0)
+                item.setId(Collections.max(id_set) + 1);
+            id_set.add(item.getId());
         }
     }
 
@@ -97,10 +98,18 @@ public class Warehouse {
     }
 
     public void completeRemoveItem(Item item){
+        id_set.remove(item.getId());
         items.remove(item);
     }
 
-    public boolean containItem(Item item){
-        return items.containsKey(item);
+    public boolean containItem(Item item){ return items.containsKey(item); }
+
+    public static Item convertItem(SupplierItem supItem){
+        for (Item item : items.keySet()){
+            if (item.getName().equals(supItem.getName())){
+                return item;
+            }
+        }
+        return null;
     }
 }

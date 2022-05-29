@@ -32,15 +32,11 @@ public class PlaceOrderController implements Initializable {
     @FXML
     private TableView<SupplierItem> orderTable;
     @FXML
-    private TableColumn<SupplierItem, Integer> id_col;
-    @FXML
     private TableColumn<SupplierItem, String> name_col;
     @FXML
     private TableColumn<SupplierItem, Integer> quant_col;
     @FXML
     private TableColumn<SupplierItem, String> addit_col;
-    @FXML
-    private TextField itemId;
     @FXML
     private TextField itemName;
     @FXML
@@ -86,12 +82,17 @@ public class PlaceOrderController implements Initializable {
 
     public void submit(ActionEvent event){
         try {
-            SupplierItem supplierItem = new SupplierItem(Integer.parseInt(itemId.getText()),
+            SupplierItem supplierItem = new SupplierItem(
                     itemName.getText(),
                     Integer.parseInt(itemQuant.getText()),
                     itemComm.getText());
             items.add(supplierItem);
-            Item itemToAdd = new Item(supplierItem.getName());
+            Item itemToAdd;
+            if (Warehouse.convertItem(supplierItem) != null){
+                itemToAdd = Warehouse.convertItem(supplierItem);
+            }
+            else {
+                itemToAdd = new Item(supplierItem.getName());}
             itemsToAdd.put(itemToAdd,  supplierItem.getQuantity());
             items = orderTable.getItems();
             orderTable.setItems(items);
@@ -105,7 +106,6 @@ public class PlaceOrderController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
         quant_col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         addit_col.setCellValueFactory(new PropertyValueFactory<>("description"));
