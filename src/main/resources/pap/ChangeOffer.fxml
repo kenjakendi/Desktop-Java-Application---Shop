@@ -53,7 +53,7 @@
                                     <TableColumn fx:id="quant_col" maxWidth="211.0" minWidth="90.0" prefWidth="-1.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
                                     <TableColumn fx:id="price_col" maxWidth="176.0" minWidth="75.0" onEditCommit="#editPrice" prefWidth="-1.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="price" />
                                     <TableColumn fx:id="addit_col" minWidth="117.0" onEditCommit="#editDescription" prefWidth="117.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="additional_info" />
-                                    <TableColumn fx:id="name_col1" maxWidth="681.8000366210938" minWidth="138.0" onEditCommit="#editName" prefWidth="681.8000366210938" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
+                                    <TableColumn maxWidth="681.8000366210938" minWidth="138.0" onEditCommit="#editName" prefWidth="681.8000366210938" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
                                  </columns>
                               </TableView>
                            </children>

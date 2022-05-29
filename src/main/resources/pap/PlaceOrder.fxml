@@ -79,7 +79,7 @@
                                     <TableColumn fx:id="name_col" prefWidth="118.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="product_name" />
                                     <TableColumn fx:id="quant_col" prefWidth="62.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
                                     <TableColumn fx:id="addit_col" prefWidth="127.0" style="-fx-border-color: #067a73; -fx-background-color: #C7F3F1;" text="additional_info" />
-                                    <TableColumn fx:id="quant_col1" prefWidth="778.3999877929687" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
+                                    <TableColumn prefWidth="778.3999877929687" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
                                  </columns>
                               </TableView>
                            </children>
