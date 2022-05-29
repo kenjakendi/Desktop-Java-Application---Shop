@@ -20,7 +20,7 @@
                <children>
                   <VBox layoutX="141.0" layoutY="130.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
+                        <AnchorPane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
                            <children>
                               <Label layoutX="88.0" layoutY="14.0" prefHeight="27.0" prefWidth="125.0" text="Pszczółka" textFill="#6f4516" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="87.0" AnchorPane.topAnchor="14.0">
                                  <font>
@@ -34,18 +34,19 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="700.0" prefWidth="200.0">
+                        <AnchorPane prefHeight="600.0" prefWidth="200.0">
                            <children>
                               <HBox prefHeight="700.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <AnchorPane prefHeight="700.0" prefWidth="50.0" style="-fx-background-color: #fff9e1;" />
                                     <AnchorPane prefHeight="640.0" prefWidth="800.0">
                                        <children>
-                                          <TableView fx:id="basketView" opacity="0.77" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73; -fx-border-width: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                          <TableView fx:id="basketView" opacity="0.77" prefHeight="214.0" prefWidth="260.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73; -fx-border-width: 2;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
                                              <columns>
-                                                <TableColumn fx:id="name_col" prefWidth="106.66668701171875" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="nazwa artykułu" />
-                                                <TableColumn fx:id="quant_col" prefWidth="103.66665649414062" sortable="false" style="-fx-border-color: #067a73; -fx-background-color: #C7F3F1;" text="ilość w koszyku" />
-                                                <TableColumn fx:id="price_col" prefWidth="45.66668701171875" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="cena" />
+                                                <TableColumn fx:id="name_col" prefWidth="98.39996337890625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="nazwa artykułu" />
+                                                <TableColumn fx:id="quant_col" prefWidth="102.4000244140625" sortable="false" style="-fx-border-color: #067a73; -fx-background-color: #C7F3F1;" text="ilość w koszyku" />
+                                                <TableColumn fx:id="price_col" prefWidth="55.20001220703125" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="cena" />
+                                                <TableColumn fx:id="price_col1" prefWidth="583.2000122070312" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
                                              </columns></TableView>
                                        </children>
                                     </AnchorPane>
@@ -54,9 +55,9 @@
                               </HBox>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
+                        <AnchorPane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
                            <children>
-                              <Button layoutX="20.0" layoutY="4.0" mnemonicParsing="false" onAction="#switchToArticles" prefHeight="50.0" prefWidth="260.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-background-radius: 8; -fx-border-radius: 8;" text="  Wyszukaj artykuł po nazwie" textFill="#6f4516" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                              <Button layoutX="20.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToArticles" prefHeight="64.0" prefWidth="260.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-background-radius: 8; -fx-border-radius: 8;" text="  Wyszukaj artykuł po nazwie" textFill="#6f4516" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                                  <graphic>
                                     <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -154,7 +155,17 @@
                               <Insets />
                            </VBox.margin>
                            <children>
-                              <Label fx:id="finalPrice" layoutX="-4.0" layoutY="-2.0" prefHeight="42.0" prefWidth="182.0" text="cena końcowa" textFill="#6f4516">
+                              <Label layoutX="109.0" layoutY="17.0" prefHeight="42.0" prefWidth="119.0" text="Сena końcowa:" textFill="#6f4516" AnchorPane.bottomAnchor="17.4" AnchorPane.leftAnchor="108.99999999999999">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="finalPrice1" layoutX="223.0" layoutY="17.0" prefHeight="42.0" prefWidth="47.0" text="cena końcowa" textFill="#6f4516" AnchorPane.bottomAnchor="17.4" AnchorPane.leftAnchor="223.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="270.0" layoutY="17.0" prefHeight="42.0" prefWidth="14.0" text="zł" textFill="#6f4516" AnchorPane.bottomAnchor="17.4" AnchorPane.leftAnchor="270.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -192,7 +203,7 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="630.0" style="-fx-background-color: #fff9e1;">
                                        <children>
-                                          <Button layoutY="24.0" mnemonicParsing="false" onAction="#remove" prefHeight="64.0" prefWidth="170.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Usuń z koszyka" textFill="#6f4516" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="12.0">
+                                          <Button layoutX="1.0" layoutY="6.0" mnemonicParsing="false" onAction="#remove" prefHeight="64.0" prefWidth="164.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Usuń z koszyka" textFill="#6f4516" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="6.0">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
@@ -208,7 +219,7 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #fff9e1;">
                                        <children>
-                                          <Button alignment="CENTER" layoutX="-2.0" layoutY="24.0" mnemonicParsing="false" onAction="#switchToPay" prefHeight="64.0" prefWidth="137.0" style="-fx-background-color: #6f4516; -fx-background-radius: 8;" text="Zapłać" textFill="WHITE" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="12.0">
+                                          <Button alignment="CENTER" layoutX="3.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToPay" prefHeight="64.0" prefWidth="137.0" style="-fx-background-color: #6f4516; -fx-background-radius: 8;" text="Zapłać" textFill="WHITE" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
                                              <font>
                                                 <Font name="System Bold" size="19.0" />
                                              </font>

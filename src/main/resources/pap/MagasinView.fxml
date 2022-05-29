@@ -46,13 +46,14 @@
                         <AnchorPane prefHeight="300.0" prefWidth="300.0" />
                         <AnchorPane prefHeight="200.0" prefWidth="1200.0">
                            <children>
-                              <TableView fx:id="orderTable" editable="true" prefHeight="204.0" prefWidth="462.0" style="-fx-background-color: DAF7F6; -fx-border-color: #067a73; -fx-border-width: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="orderTable" editable="true" prefHeight="204.0" prefWidth="234.0" style="-fx-background-color: DAF7F6; -fx-border-color: #067a73; -fx-border-width: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="0.0">
                                  <columns>
                                     <TableColumn fx:id="id_col" maxWidth="-1.0" minWidth="38.0" onEditCommit="#editId" prefWidth="-1.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="id" />
                                     <TableColumn fx:id="name_col" maxWidth="324.0" minWidth="138.0" onEditCommit="#editName" prefWidth="-1.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="product_name" />
                                     <TableColumn fx:id="quant_col" maxWidth="211.0" minWidth="90.0" prefWidth="-1.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
                                     <TableColumn fx:id="price_col" maxWidth="176.0" minWidth="75.0" onEditCommit="#editPrice" prefWidth="-1.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="price" />
                                     <TableColumn fx:id="addit_col" minWidth="117.0" onEditCommit="#editDescription" prefWidth="117.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="additional_info" />
+                                    <TableColumn fx:id="addit_col1" minWidth="117.0" onEditCommit="#editDescription" prefWidth="923.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
                                  </columns>
                               </TableView>
                            </children>

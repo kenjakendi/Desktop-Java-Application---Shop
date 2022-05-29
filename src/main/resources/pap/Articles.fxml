@@ -42,74 +42,34 @@
             </AnchorPane>
             <AnchorPane prefHeight="500.0" prefWidth="200.0">
                <children>
-                  <HBox layoutX="209.0" prefHeight="100.0" prefWidth="1800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane prefHeight="200.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="950.0">
+                        <HBox layoutX="74.0" layoutY="17.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <HBox layoutX="74.0" layoutY="17.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane prefHeight="200.0" prefWidth="450.0" />
+                              <AnchorPane prefHeight="200.0" prefWidth="900.0">
                                  <children>
-                                    <AnchorPane prefHeight="200.0" prefWidth="300.0" />
-                                    <AnchorPane prefHeight="200.0" prefWidth="600.0">
-                                       <children>
-                                          <TextField fx:id="productName" layoutX="27.0" layoutY="7.0" prefHeight="35.0" prefWidth="319.0" promptText="wpisz nazwę produktu..." AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <TableView fx:id="productTable" layoutY="49.0" onMouseClicked="#itemDetails" prefHeight="206.0" prefWidth="322.0" style="-fx-background-color: DAF7F6; -fx-border-width: 2; -fx-border-color: #067a73;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                                            <columns>
-                                              <TableColumn fx:id="name_col" prefWidth="116.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="name" />
-                                                <TableColumn prefWidth="83.33331298828125" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
-                                              <TableColumn fx:id="price_col" prefWidth="57.3333740234375" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="price" />
-                                                <TableColumn fx:id="quan_col" minWidth="0.0" prefWidth="64.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
-                                            </columns>
-                                          </TableView>
-                                       </children>
-                                    </AnchorPane>
+                                    <TextField fx:id="productName" layoutX="27.0" layoutY="7.0" prefHeight="35.0" prefWidth="319.0" promptText="wpisz nazwę produktu..." AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <TableView fx:id="productTable" layoutY="49.0" onMouseClicked="#itemDetails" prefHeight="206.0" prefWidth="490.0" style="-fx-background-color: DAF7F6; -fx-border-width: 2; -fx-border-color: #067a73;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0">
+                                      <columns>
+                                        <TableColumn fx:id="name_col" prefWidth="116.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="name" />
+                                          <TableColumn prefWidth="83.33331298828125" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
+                                        <TableColumn fx:id="price_col" prefWidth="57.3333740234375" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="price" />
+                                          <TableColumn fx:id="quan_col" minWidth="0.0" prefWidth="64.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
+                                          <TableColumn prefWidth="498.3999328613281" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
+                                      </columns>
+                                    </TableView>
                                  </children>
-                              </HBox>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="450.0" />
                            </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="850.0">
-                           <children>
-                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <AnchorPane prefHeight="300.0" prefWidth="300.0" />
-                                    <AnchorPane prefHeight="300.0" prefWidth="400.0">
-                                       <children>
-                                          <Button fx:id="enterNameButton1" layoutX="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="139.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wyszukaj" textFill="#6f4516" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                             <graphic>
-                                                <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@graphics/loupe.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <Button fx:id="enterNameButton" layoutX="-2.0" layoutY="180.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="155.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 8; -fx-border-radius: 8;" text="Dodaj" textFill="#6f4516" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="14.0">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                             <graphic>
-                                                <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@graphics/plus.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="200.0" prefWidth="250.0" />
-                                 </children>
-                              </HBox>
-                           </children>
-                        </AnchorPane>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="300.0" prefWidth="200.0">
