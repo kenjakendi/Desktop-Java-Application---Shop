@@ -153,6 +153,13 @@
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
+                           <children>
+                              <Label fx:id="finalPrice" layoutX="-4.0" layoutY="-2.0" prefHeight="42.0" prefWidth="182.0" text="cena końcowa" textFill="#6f4516">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #fff9e1;">
                            <children>

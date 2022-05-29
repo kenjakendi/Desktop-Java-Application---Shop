@@ -45,6 +45,8 @@ public class MainShopController implements Initializable {
 
     @FXML
     Label test;
+    @FXML
+    Label finalPrice;
 
     private Stage stage;
     private Scene scene;
@@ -59,6 +61,7 @@ public class MainShopController implements Initializable {
     public void refreshScene(){
         basketView.setItems(entries);
         logOutButton.setVisible(LogInController.getLogged());
+        finalPrice.setText(String.valueOf(basket.calculatePrice()));
     }
 
     public void remove(ActionEvent event) throws IOException{
@@ -71,8 +74,8 @@ public class MainShopController implements Initializable {
                         it.remove();
                     }
                 }
-                basketView.setItems(entries);
                 basket.removeItem(item.getKey());
+                refreshScene();
             } catch (Exception e) {
                 System.out.println("no product chosen");
             }
