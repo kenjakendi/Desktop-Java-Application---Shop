@@ -6,35 +6,86 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.FinanceMonitorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.FinanceMonitorController">
    <children>
-      <Label layoutX="81.0" layoutY="36.0" text="Pszczółka" textFill="#6f4516">
-         <font>
-            <Font name="Arial Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="67.0" fitWidth="64.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@graphics/logo.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="400.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wróć do sklepu" textFill="#6f4516">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Button>
-      <Label layoutX="110.0" layoutY="66.0" text="Statystyka zarobków w ostatnich sesjach sklepu" textFill="#2586e5">
-         <font>
-            <Font name="Arial Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <Button layoutX="207.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToManagerPage" prefHeight="47.0" prefWidth="185.0" style="-fx-border-color: #6f4516; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #ffdd64;" text="Wróć" textFill="#6f4516">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Button>
-      <PieChart fx:id="pieChart" layoutX="94.0" layoutY="97.0" prefHeight="271.0" prefWidth="412.0" />
+      <VBox layoutX="209.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="375.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="51.0" layoutY="23.0" prefHeight="27.0" prefWidth="125.0" text="Pszczółka" textFill="#6f4516" AnchorPane.leftAnchor="88.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="67.0" fitWidth="64.0" layoutX="9.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="9.0">
+                                 <image>
+                                    <Image url="@graphics/logo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="475.0" prefWidth="200.0">
+               <children>
+                  <HBox layoutY="15.0" prefHeight="244.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+                     <children>
+                        <AnchorPane prefHeight="300.0" prefWidth="300.0" />
+                        <AnchorPane prefHeight="250.0" prefWidth="1200.0">
+                           <children>
+                              <Label alignment="CENTER" text="Statystyka zarobków w ostatnich sesjach sklepu" textFill="#2586e5" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="-15.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="19.0" />
+                                 </font>
+                              </Label>
+                              <PieChart fx:id="pieChart" layoutY="31.0" prefHeight="213.0" prefWidth="486.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="31.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="300.0" prefWidth="300.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="350.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wróć do sklepu" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToManagerPage" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wróć" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

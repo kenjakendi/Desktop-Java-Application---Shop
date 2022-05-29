@@ -56,12 +56,12 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <TableView fx:id="productTable" layoutY="49.0" onMouseClicked="#itemDetails" prefHeight="206.0" prefWidth="322.0">
+                                          <TableView fx:id="productTable" layoutY="49.0" onMouseClicked="#itemDetails" prefHeight="206.0" prefWidth="322.0" style="-fx-background-color: DAF7F6; -fx-border-width: 2; -fx-border-color: #067a73;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                             <columns>
-                                              <TableColumn fx:id="name_col" prefWidth="116.6666259765625" sortable="false" text="name" />
-                                                <TableColumn prefWidth="83.33331298828125" sortable="false" />
-                                              <TableColumn fx:id="price_col" prefWidth="57.3333740234375" sortable="false" text="price" />
-                                                <TableColumn fx:id="quan_col" minWidth="0.0" prefWidth="64.6666259765625" sortable="false" text="quantity" />
+                                              <TableColumn fx:id="name_col" prefWidth="116.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="name" />
+                                                <TableColumn prefWidth="83.33331298828125" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
+                                              <TableColumn fx:id="price_col" prefWidth="57.3333740234375" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="price" />
+                                                <TableColumn fx:id="quan_col" minWidth="0.0" prefWidth="64.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
                                             </columns>
                                           </TableView>
                                        </children>

@@ -41,11 +41,11 @@
                                     <AnchorPane prefHeight="700.0" prefWidth="50.0" style="-fx-background-color: #fff9e1;" />
                                     <AnchorPane prefHeight="640.0" prefWidth="800.0">
                                        <children>
-                                          <TableView fx:id="basketView" opacity="0.77" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                          <TableView fx:id="basketView" opacity="0.77" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73; -fx-border-width: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
                                              <columns>
-                                                <TableColumn fx:id="name_col" prefWidth="110.66668701171875" sortable="false" text="nazwa artykułu" />
-                                                <TableColumn fx:id="quant_col" prefWidth="104.66665649414062" sortable="false" text="ilość w koszyku" />
-                                                <TableColumn fx:id="price_col" prefWidth="46.66668701171875" sortable="false" text="cena" />
+                                                <TableColumn fx:id="name_col" prefWidth="106.66668701171875" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="nazwa artykułu" />
+                                                <TableColumn fx:id="quant_col" prefWidth="103.66665649414062" sortable="false" style="-fx-border-color: #067a73; -fx-background-color: #C7F3F1;" text="ilość w koszyku" />
+                                                <TableColumn fx:id="price_col" prefWidth="45.66668701171875" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="cena" />
                                              </columns></TableView>
                                        </children>
                                     </AnchorPane>
@@ -131,16 +131,16 @@
                                     <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #fff9e1;" />
                                     <AnchorPane prefHeight="200.0" prefWidth="650.0" style="-fx-background-color: #fff9e1;">
                                        <children>
-                                          <Button fx:id="logOutButton" layoutX="41.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut" prefHeight="55.0" prefWidth="137.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="  Wyloguj się" textFill="#6f4516" visible="false" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="20.0">
+                                          <Button fx:id="logOutButton" layoutX="41.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut" prefHeight="55.0" prefWidth="137.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wyloguj się" textFill="#6f4516" visible="false" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="20.0">
                                              <graphic>
-                                                <ImageView fitHeight="41.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="22.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@graphics/log_out.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
                                              <font>
-                                                <Font name="System Bold" size="15.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Button>
                                        </children>
