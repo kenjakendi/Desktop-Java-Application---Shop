@@ -35,7 +35,7 @@ public class ChangeOfferController implements Initializable {
 
     Warehouse warehouse = new Warehouse();
 
-    ObservableList<Map.Entry<Item, Integer>> entries = FXCollections.observableArrayList(warehouse.items.entrySet());
+    ObservableList<Map.Entry<Item, Integer>> entries = FXCollections.observableArrayList(warehouse.getItems().entrySet());
 
     @FXML
     private TableView<Map.Entry<Item, Integer>> orderTable;

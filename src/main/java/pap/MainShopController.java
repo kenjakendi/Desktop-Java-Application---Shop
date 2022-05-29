@@ -1,7 +1,10 @@
 package pap;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,10 +15,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.paint.CycleMethod;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.Background;
 import javafx.scene.text.Font;
 import javafx.scene.layout.CornerRadii;
@@ -26,6 +27,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,7 +35,14 @@ import java.util.*;
 
 public class MainShopController implements Initializable {
     @FXML
-    private ListView<String> basketView;
+    private TableView<Map.Entry<Item, Integer>> basketView;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, String> name_col;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, Double> price_col;
+    @FXML
+    private TableColumn<Map.Entry<Item, Integer>, Integer> quant_col;
+
     @FXML
     Label test;
 
@@ -45,39 +54,25 @@ public class MainShopController implements Initializable {
     @FXML
     Button logOutButton;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        refreshScene();
-        basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                catchItemName = basketView.getSelectionModel().getSelectedItem();
-                test.setText(catchItemName);
-            }
-        });
-    }
+    ObservableList<Map.Entry<Item, Integer>> entries = FXCollections.observableArrayList(basket.getBasket().entrySet());
 
     public void refreshScene(){
-        basketView.getItems().clear();
-        for (Item item: basket.basket.keySet())
-        {
-            String name = item.getName();
-            basketView.getItems().add(name);
-        }
+        basketView.setItems(entries);
         logOutButton.setVisible(LogInController.getLogged());
-    }
-
-    public void addItem(Item item){
-        basket.addItem(item);
-        refreshScene();
     }
 
     public void remove(ActionEvent event) throws IOException{
         if (LogInController.getLogged()) {
             try {
-                Item item = basket.findItemByName(catchItemName);
-                basket.removeItem(item);
-                refreshScene();
+                Map.Entry<Item, Integer> item = basketView.getSelectionModel().getSelectedItem();
+                for (Iterator<Map.Entry<Item, Integer>> it = entries.iterator(); it.hasNext(); ) {
+                    Map.Entry<Item, Integer> entry = it.next();
+                    if (entry == item){
+                        it.remove();
+                    }
+                }
+                basketView.setItems(entries);
+                basket.removeItem(item.getKey());
             } catch (Exception e) {
                 System.out.println("no product chosen");
             }
@@ -187,4 +182,45 @@ public class MainShopController implements Initializable {
 //        stage.setScene(scene);
 //        stage.show();
 //    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        name_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, String> param) {
+                String name = param.getValue().getKey().getName();
+                ObservableValue<String> obs_name = new ReadOnlyObjectWrapper<>(name);
+                return obs_name;
+            }
+        });
+
+        quant_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Integer>, ObservableValue<Integer>>() {
+            @Override
+            public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Integer> param) {
+                int quantity = param.getValue().getValue();
+                ObservableValue<Integer> obs_quantity = new ReadOnlyObjectWrapper<>(quantity);
+                return obs_quantity;
+            }
+        });
+
+        price_col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Double>, ObservableValue<Double>>() {
+            @Override
+            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Map.Entry<Item, Integer>, Double> param) {
+                Double price = param.getValue().getKey().getPrice();
+                ObservableValue<Double> obs_price = new ReadOnlyObjectWrapper<>(price);
+                return obs_price;
+            }
+        });
+
+        refreshScene();
+
+        basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Map.Entry<Item, Integer>>() {
+            @Override
+            public void changed(ObservableValue<? extends Map.Entry<Item, Integer>> observableValue, Map.Entry<Item, Integer> itemIntegerEntry, Map.Entry<Item, Integer> t1) {
+                catchItemName = basketView.getSelectionModel().getSelectedItem().getKey().getName();
+                test.setText(catchItemName);
+            }
+        });
+    }
 }
