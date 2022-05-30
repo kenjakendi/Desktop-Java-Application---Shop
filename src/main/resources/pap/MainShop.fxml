@@ -165,7 +165,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="test11" layoutX="154.0" layoutY="40.0" prefHeight="42.0" prefWidth="114.0" text="zł" textFill="#6f4516">
+                              <Label fx:id="test11" layoutX="181.0" layoutY="40.0" prefHeight="42.0" prefWidth="114.0" text="zł" textFill="#6f4516">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

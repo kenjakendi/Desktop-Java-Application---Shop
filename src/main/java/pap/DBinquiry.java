@@ -210,4 +210,24 @@ public class DBinquiry {
             rs.close();
         }
     }
+
+    public void removeItem(String name) throws Exception {
+        PreparedStatement pr = null;
+
+        String sql =  "DELETE FROM products WHERE name = ?;";
+
+        try {
+            pr = this.connection.prepareStatement(sql);
+            pr.setString(1, name);
+            pr.execute();
+
+
+        } catch (SQLException ex) {
+
+        } finally {
+            pr.close();
+
+        }
+
+    }
 }

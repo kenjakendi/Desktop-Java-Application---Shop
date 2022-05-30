@@ -8,49 +8,127 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="599.0" style="-fx-background-color: #fff9e1; -fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.PlaceOrderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #a98426; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pap.PlaceOrderController">
    <children>
-      <Label layoutX="81.0" layoutY="36.0" text="Pszczółka" textFill="#6f4516">
-         <font>
-            <Font name="Arial Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="67.0" fitWidth="64.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@graphics/logo.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="511.0" layoutY="389.0" mnemonicParsing="false" onAction="#switchToManager" prefHeight="41.0" prefWidth="73.0" style="-fx-border-color: #6f4516; -fx-background-color: #fff4c6; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wróć" textFill="#6f4516">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
-      <TableView fx:id="orderTable" editable="true" layoutX="216.0" layoutY="130.0" prefHeight="184.0" prefWidth="368.0">
-         <columns>
-            <TableColumn fx:id="id_col" prefWidth="38.666656494140625" text="id" />
-            <TableColumn fx:id="name_col" prefWidth="138.66666412353516" text="product_name" />
-            <TableColumn fx:id="quant_col" prefWidth="74.6666259765625" text="quantity" />
-            <TableColumn fx:id="addit_col" prefWidth="111.33331298828125" text="additional_info" />
-         </columns>
-      </TableView>
-      <VBox layoutX="28.0" layoutY="122.0" prefHeight="200.0" prefWidth="165.0">
+      <VBox layoutX="141.0" layoutY="55.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID:" />
-            <TextField fx:id="itemId" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter name:" />
-            <TextField fx:id="itemName" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter quantity:" />
-            <TextField fx:id="itemQuant" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Any additional comments:" />
-            <TextField fx:id="itemComm" prefHeight="58.0" prefWidth="165.0" />
+            <AnchorPane prefHeight="375.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="51.0" layoutY="23.0" prefHeight="27.0" prefWidth="125.0" text="Pszczółka" textFill="#6f4516" AnchorPane.leftAnchor="88.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="67.0" fitWidth="64.0" layoutX="9.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="9.0">
+                                 <image>
+                                    <Image url="@graphics/logo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="450.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
+               <children>
+                  <HBox layoutX="200.0" layoutY="8.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="300.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="550.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="165.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                 <children>
+                                    <Text fill="#6e4316" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter name:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="itemName" />
+                                    <Text fill="#6f4516" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter quantity:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="itemQuant" />
+                                    <Text fill="#6f4516" strokeType="OUTSIDE" strokeWidth="0.0" text="Any additional comments:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="itemComm" prefHeight="58.0" prefWidth="165.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <TableView fx:id="orderTable" editable="true" prefHeight="170.0" prefWidth="278.0" style="-fx-background-color: DAF7F6; -fx-border-color: #067a73; -fx-border-width: 2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="name_col" prefWidth="118.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="product_name" />
+                                    <TableColumn fx:id="quant_col" prefWidth="62.0" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
+                                    <TableColumn fx:id="addit_col" prefWidth="127.0" style="-fx-border-color: #067a73; -fx-background-color: #C7F3F1;" text="additional_info" />
+                                    <TableColumn prefWidth="778.3999877929687" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="300.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="375.0" prefWidth="200.0" style="-fx-background-color: #fff9e1;">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="105.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Dodaj" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#delete" prefHeight="35.0" prefWidth="143.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Usuń element" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToManager" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wróć" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="52.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#placeOrder" prefHeight="35.0" prefWidth="144.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Złóż zamówienie" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
-      <Button layoutX="142.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" text="dodaj" />
-      <Button layoutX="481.0" layoutY="330.0" mnemonicParsing="false" onAction="#placeOrder" text="złóż zamówienie" />
-      <Button layoutX="348.0" layoutY="330.0" mnemonicParsing="false" onAction="#delete" text="usuń element" />
    </children>
 </AnchorPane>

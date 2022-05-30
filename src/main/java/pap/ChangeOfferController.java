@@ -60,11 +60,13 @@ public class ChangeOfferController implements Initializable {
     }
 
     public void remove(ActionEvent event){
+        DBinquiry db = new DBinquiry();
         try {
             Map.Entry<Item, Integer> item = orderTable.getSelectionModel().getSelectedItem();
             for (Iterator<Map.Entry<Item, Integer>> it = entries.iterator(); it.hasNext(); ) {
                 Map.Entry<Item, Integer> entry = it.next();
                 if (entry == item){
+                    db.removeItem(item.getKey().getName());
                     it.remove();
                 }
             }
