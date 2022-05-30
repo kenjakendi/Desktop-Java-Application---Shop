@@ -88,11 +88,7 @@ public class PlaceOrderController implements Initializable {
                     itemComm.getText());
             items.add(supplierItem);
             Item itemToAdd;
-            if (Warehouse.convertItem(supplierItem) != null){
-                itemToAdd = Warehouse.convertItem(supplierItem);
-            }
-            else {
-                itemToAdd = new Item(supplierItem.getName());}
+            itemToAdd = Warehouse.convertItem(supplierItem);
             itemsToAdd.put(itemToAdd,  supplierItem.getQuantity());
             items = orderTable.getItems();
             orderTable.setItems(items);

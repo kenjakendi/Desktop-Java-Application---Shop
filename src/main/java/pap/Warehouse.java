@@ -45,9 +45,6 @@ public class Warehouse {
             items.replace(item, oldValue + 1);
         } else{
             items.put(item, 1);
-            if (item.getId() == 0)
-                item.setId(Collections.max(id_set) + 1);
-            id_set.add(item.getId());
         }
     }
 
@@ -102,7 +99,8 @@ public class Warehouse {
         items.remove(item);
     }
 
-    public boolean containItem(Item item){ return items.containsKey(item); }
+    public boolean containItem(Item item){
+        return items.containsKey(item); }
 
     public static Item convertItem(SupplierItem supItem){
         for (Item item : items.keySet()){
@@ -110,6 +108,9 @@ public class Warehouse {
                 return item;
             }
         }
-        return null;
+        Item item = new Item(supItem.getName());
+        item.setId(Collections.max(id_set) + 1);
+        id_set.add(item.getId());
+        return item;
     }
 }
