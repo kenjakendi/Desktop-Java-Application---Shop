@@ -6,7 +6,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -221,8 +220,10 @@ public class MainShopController implements Initializable {
         basketView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Map.Entry<Item, Integer>>() {
             @Override
             public void changed(ObservableValue<? extends Map.Entry<Item, Integer>> observableValue, Map.Entry<Item, Integer> itemIntegerEntry, Map.Entry<Item, Integer> t1) {
-                catchItemName = basketView.getSelectionModel().getSelectedItem().getKey().getName();
-                test.setText(catchItemName);
+                try{
+                    catchItemName = basketView.getSelectionModel().getSelectedItem().getKey().getName();
+                    test.setText(catchItemName);
+                }catch (NullPointerException e){}
             }
         });
     }
