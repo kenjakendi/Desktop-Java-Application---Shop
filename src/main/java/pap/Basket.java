@@ -98,7 +98,7 @@ public class Basket {
             int quantity = basket.get(item);
             price+=itemPrice*quantity;
         }
-        return price;
+        return Math.round(price * 100.0) / 100.0;
     }
 
 }
