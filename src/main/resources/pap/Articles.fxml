@@ -93,7 +93,7 @@
                                     <AnchorPane prefHeight="63.0" prefWidth="300.0" />
                                     <AnchorPane prefHeight="63.0" prefWidth="400.0">
                                        <children>
-                                          <Button layoutX="60.0" layoutY="-8.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="44.0" prefWidth="300.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;" text="Wróć do sklepu" textFill="#6f4516" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0">
+                                          <Button layoutX="60.0" layoutY="-8.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="44.0" prefWidth="300.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;" stylesheets="@MyCss.css" text="Wróć do sklepu" textFill="#6f4516" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>

@@ -77,7 +77,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </PasswordField>
-                              <Button layoutX="125.0" layoutY="92.0" mnemonicParsing="false" onAction="#tryLogging" prefHeight="36.0" prefWidth="71.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Enter" textFill="#6f4516" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+                              <Button layoutX="125.0" layoutY="98.0" mnemonicParsing="false" onAction="#tryLogging" prefHeight="43.0" prefWidth="71.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" stylesheets="@MyCss.css" text="Enter" textFill="#6f4516" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -95,7 +95,7 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#switchToHelp" prefHeight="43.0" prefWidth="158.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Pomoc" textFill="#6f4516" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="52.0">
+                              <Button mnemonicParsing="false" onAction="#switchToHelp" prefHeight="43.0" prefWidth="158.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Pomoc" textFill="#6f4516" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="52.0">
                                  <graphic>
                                     <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -109,10 +109,17 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="600.0" />
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Anuluj" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="52.0">
+                              <Label fx:id="loginStatus" alignment="CENTER" layoutX="35.0" layoutY="14.0" prefHeight="27.0" prefWidth="126.0" textFill="#6f4516" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToMainShop" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Anuluj" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="52.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

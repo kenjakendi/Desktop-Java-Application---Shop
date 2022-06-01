@@ -163,8 +163,11 @@ public class MainShopController implements Initializable {
     }
 
     public void switchToArticles(ActionEvent event) throws IOException{
+       /* double myWidth = this.scene.getWidth();
+        double myHight = this.scene.getHeight(); */
         Parent root = FXMLLoader.load(getClass().getResource("Articles.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        /*scene = new Scene(root);*/
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

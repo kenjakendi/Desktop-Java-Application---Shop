@@ -70,7 +70,7 @@
                         <AnchorPane prefHeight="200.0" prefWidth="600.0" />
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#remove" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Usuń" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0">
+                              <Button mnemonicParsing="false" onAction="#remove" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Usuń" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -78,7 +78,7 @@
                            </children></AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToManager" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wróć " textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0">
+                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToManager" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Wróć " textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

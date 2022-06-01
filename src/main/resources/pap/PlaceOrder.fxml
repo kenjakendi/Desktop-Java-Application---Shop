@@ -95,7 +95,7 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="105.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Dodaj" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
+                              <Button mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="105.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Dodaj" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -104,7 +104,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#delete" prefHeight="35.0" prefWidth="143.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Usuń element" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
+                              <Button mnemonicParsing="false" onAction="#delete" prefHeight="35.0" prefWidth="143.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Usuń element" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -112,12 +112,12 @@
                            </children></AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToManager" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Wróć" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="52.0">
+                              <Button layoutX="94.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToManager" prefHeight="43.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: #ffdd64; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Wróć" textFill="#6f4516" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="52.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#placeOrder" prefHeight="35.0" prefWidth="144.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" text="Złóż zamówienie" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
+                              <Button mnemonicParsing="false" onAction="#placeOrder" prefHeight="35.0" prefWidth="144.0" style="-fx-background-radius: 8; -fx-border-width: 2; -fx-background-color: ffe58f; -fx-border-color: #6f4516; -fx-border-radius: 8;" stylesheets="@MyCss.css" text="Złóż zamówienie" textFill="#6f4516" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-5.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
