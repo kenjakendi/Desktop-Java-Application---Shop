@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -62,6 +63,9 @@
                                           <TableColumn fx:id="quan_col" minWidth="0.0" prefWidth="64.6666259765625" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="quantity" />
                                           <TableColumn prefWidth="498.3999328613281" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
                                       </columns>
+                                       <cursor>
+                                          <Cursor fx:constant="CROSSHAIR" />
+                                       </cursor>
                                     </TableView>
                                  </children>
                               </AnchorPane>
@@ -97,6 +101,9 @@
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="OPEN_HAND" />
+                                             </cursor>
                                           </Button>
                                        </children>
                                     </AnchorPane>

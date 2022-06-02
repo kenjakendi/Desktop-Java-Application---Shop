@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -47,7 +48,10 @@
                                                 <TableColumn fx:id="quant_col" prefWidth="96.0" sortable="false" style="-fx-border-color: #067a73; -fx-background-color: #C7F3F1;" text="ilość w koszyku" />
                                                 <TableColumn fx:id="price_col" prefWidth="63.0" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" text="cena" />
                                                 <TableColumn prefWidth="620.0" sortable="false" style="-fx-background-color: #C7F3F1; -fx-border-color: #067a73;" />
-                                             </columns></TableView>
+                                             </columns>
+                                             <cursor>
+                                                <Cursor fx:constant="CLOSED_HAND" />
+                                             </cursor></TableView>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="280.0" prefWidth="50.0" style="-fx-background-color: #fff9e1;" />
@@ -68,6 +72,9 @@
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
                               </Button>
                            </children>
                            <VBox.margin>
@@ -102,6 +109,9 @@
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="OPEN_HAND" />
+                                             </cursor>
                                           </Button>
                                        </children>
                                     </AnchorPane>
@@ -118,6 +128,9 @@
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="OPEN_HAND" />
+                                             </cursor>
                                           </Button>
                                        </children>
                                     </AnchorPane>
@@ -130,7 +143,7 @@
                               <HBox layoutY="14.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #fff9e1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #fff9e1;" />
-                                    <AnchorPane prefHeight="200.0" prefWidth="650.0" style="-fx-background-color: #fff9e1;">
+                                    <AnchorPane prefHeight="200.0" prefWidth="650.0" style="-fx-background-color: #fff9e1;" stylesheets="@MyCss.css">
                                        <children>
                                           <Button fx:id="logOutButton" layoutX="41.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut" prefHeight="55.0" prefWidth="137.0" style="-fx-border-color: #6f4516; -fx-background-color: #ffdd64; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Wyloguj się" textFill="#6f4516" visible="false" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="20.0">
                                              <graphic>
@@ -145,6 +158,9 @@
                                              </font>
                                           </Button>
                                        </children>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
                                     </AnchorPane>
                                  </children>
                               </HBox>
@@ -214,6 +230,9 @@
                                                    </image>
                                                 </ImageView>
                                              </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="OPEN_HAND" />
+                                             </cursor>
                                           </Button>
                                        </children>
                                     </AnchorPane>
@@ -230,6 +249,9 @@
                                                    </image>
                                                 </ImageView>
                                              </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="OPEN_HAND" />
+                                             </cursor>
                                           </Button>
                                        </children>
                                     </AnchorPane>
