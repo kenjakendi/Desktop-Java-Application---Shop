@@ -24,7 +24,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class LogInController {
 
@@ -70,14 +74,31 @@ public class LogInController {
         return logged;
     }
 
+    public  String getHashSHA(String password){
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            md.update(password.getBytes());
+            byte byteData[] = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < byteData.length; i++){
+                sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public Map tryLogging(ActionEvent event) throws IOException {
         String log = login.getText();
         String pass = password.getText();
+        pass = getHashSHA(pass);
         Manager our_manager = new Manager(log, pass);
         System.out.println(our_manager.userData.keySet() + " " + our_manager.userData.values());
 
         try{
-            if(this.logininquiry.isLogin(login.getText(), password.getText())){
+            if(this.logininquiry.isLogin(login.getText(), pass)){
                 switchToManagerPage(log, event);
             }
             else
