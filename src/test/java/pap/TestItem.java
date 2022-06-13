@@ -13,7 +13,7 @@ import static org.mockito.Mockito.when;
 public class TestItem {
 
     @Test
-    public void testMock(){
+    public void testMockName(){
         Item mockItem = Mockito.mock(Item.class);
         Assert.assertNotNull(mockItem);
         when(mockItem.getName()).thenReturn("mock");
