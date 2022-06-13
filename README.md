@@ -1,6 +1,13 @@
 # PAP22L-Z16
 ## Grupa 16 - System zarządzania sklepem
 
+### Run
+
+```
+mvn compile
+mvn exec:java -Dexec.mainClass=pap.AppPanel
+```
+
 ### Zespół: 
 - Michał Laskowski  
  - Kateryna Naumenko
